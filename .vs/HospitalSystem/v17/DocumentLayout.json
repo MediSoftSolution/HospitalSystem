@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\HospitalSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\hospitalsystem\\hospitalsystem.application\\features\\doctors\\queries\\getalldoctors\\getalldoctorsqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\features\\doctors\\queries\\getalldoctors\\getalldoctorsqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\hospitalsystem\\hospitalsystem.application\\features\\doctors\\queries\\getalldoctors\\getalldoctorsqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\features\\doctors\\queries\\getalldoctors\\getalldoctorsqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EE27BC-5E4B-44A5-8CCB-7EB513008288}|HospitalSystem.Persistence\\HospitalSystem.Persistence.csproj|c:\\users\\hp\\desktop\\hospitalsystem\\hospitalsystem.persistence\\repositories\\readrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EE27BC-5E4B-44A5-8CCB-7EB513008288}|HospitalSystem.Persistence\\HospitalSystem.Persistence.csproj|solutionrelative:hospitalsystem.persistence\\repositories\\readrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\hospitalsystem\\hospitalsystem.application\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EE27BC-5E4B-44A5-8CCB-7EB513008288}|HospitalSystem.Persistence\\HospitalSystem.Persistence.csproj|c:\\users\\hp\\desktop\\hospitalsystem\\hospitalsystem.persistence\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EE27BC-5E4B-44A5-8CCB-7EB513008288}|HospitalSystem.Persistence\\HospitalSystem.Persistence.csproj|solutionrelative:hospitalsystem.persistence\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED91B97-D8CC-4B21-8801-56AA5BBEBDC0}|HospitalSystem.Domain\\HospitalSystem.Domain.csproj|c:\\users\\hp\\desktop\\hospitalsystem\\hospitalsystem.domain\\entities\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED91B97-D8CC-4B21-8801-56AA5BBEBDC0}|HospitalSystem.Domain\\HospitalSystem.Domain.csproj|solutionrelative:hospitalsystem.domain\\entities\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetAllDoctorsQueryRequest.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Application\\Features\\Doctors\\Queries\\GetAllDoctors\\GetAllDoctorsQueryRequest.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Application\\Features\\Doctors\\Queries\\GetAllDoctors\\GetAllDoctorsQueryRequest.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Application\\Features\\Doctors\\Queries\\GetAllDoctors\\GetAllDoctorsQueryRequest.cs",
+              "RelativeToolTip": "HospitalSystem.Application\\Features\\Doctors\\Queries\\GetAllDoctors\\GetAllDoctorsQueryRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T06:12:50.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReadRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Persistence\\Repositories\\ReadRepository.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Persistence\\Repositories\\ReadRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Persistence\\Repositories\\ReadRepository.cs",
+              "RelativeToolTip": "HospitalSystem.Persistence\\Repositories\\ReadRepository.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwCQAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T06:22:44.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Registration.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Application\\Registration.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Application\\Registration.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Application\\Registration.cs",
+              "RelativeToolTip": "HospitalSystem.Application\\Registration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T07:41:32.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Persistence\\UnitOfWorks\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Persistence\\UnitOfWorks\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Persistence\\UnitOfWorks\\UnitOfWork.cs",
+              "RelativeToolTip": "HospitalSystem.Persistence\\UnitOfWorks\\UnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T06:22:37.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Domain\\Entities\\Doctor.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Domain\\Entities\\Doctor.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Domain\\Entities\\Doctor.cs",
+              "RelativeToolTip": "HospitalSystem.Domain\\Entities\\Doctor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T06:14:06.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GetAllDoctorsQueryResponse.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Application\\Features\\Doctors\\Queries\\GetAllDoctors\\GetAllDoctorsQueryResponse.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Application\\Features\\Doctors\\Queries\\GetAllDoctors\\GetAllDoctorsQueryResponse.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Application\\Features\\Doctors\\Queries\\GetAllDoctors\\GetAllDoctorsQueryResponse.cs",
+              "RelativeToolTip": "HospitalSystem.Application\\Features\\Doctors\\Queries\\GetAllDoctors\\GetAllDoctorsQueryResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T06:13:41.428Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

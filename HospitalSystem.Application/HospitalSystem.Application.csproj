@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HospitalSystem.Domain\HospitalSystem.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Beheviors\" />
+      <Folder Include="DTOs\" />
+      <Folder Include="Exceptions\" />
+      <Folder Include="Features\Doctors\Rules\" />
+      <Folder Include="Features\Doctors\Exceptions\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
+      <PackageReference Include="MediatR" Version="12.4.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    </ItemGroup>
+
+</Project>
