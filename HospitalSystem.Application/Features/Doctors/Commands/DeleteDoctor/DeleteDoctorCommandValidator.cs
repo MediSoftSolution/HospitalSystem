@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Features.Doctors.Commands.DeleteDoctor
 {
-    public class UpdateDoctorCommandValidator : AbstractValidator<UpdateDoctorCommandRequest>
+    public class DeleteDoctorCommandValidator : AbstractValidator<DeleteDoctorCommandRequest>
     {
+        public DeleteDoctorCommandValidator()
+        {
+            RuleFor(x => x.Id).GreaterThan(0);
+        }
     }
 }

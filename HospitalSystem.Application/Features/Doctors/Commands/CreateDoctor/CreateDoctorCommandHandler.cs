@@ -1,6 +1,8 @@
 ﻿using HospitalSystem.Application.Bases;
+using HospitalSystem.Application.Features.Doctors.Rules;
 using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
+using HospitalSystem.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 
@@ -12,9 +14,14 @@ namespace HospitalSystem.Application.Features.Doctors.Commands.CreateDoctor
         {
         }
 
-        public Task<Unit> Handle(CreateDoctorCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateDoctorCommandRequest request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+
+            Doctor doctor = mapper.Map<Doctor, CreateDoctorCommandRequest>(request);
+
+            await unitOfWork.GetWriteRepository<Doctor>().AddAsync(doctor);
+
+            return Unit.Value;
         }
     }
 }

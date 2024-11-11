@@ -7,12 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MediatR" Version="12.4.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.6" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
+      <ProjectReference Include="..\HospitalSystem.Application\HospitalSystem.Application.csproj" />
+      <ProjectReference Include="..\HospitalSystem.Mapper\HospitalSystem.Mapper.csproj" />
+      <ProjectReference Include="..\HospitalSystem.Persistence\HospitalSystem.Persistence.csproj" />
     </ItemGroup>
 
 </Project>

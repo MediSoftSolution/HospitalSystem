@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "eXcKHOdG62A=",
+  "dgSpecHash": "V1jh64XFTeQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Mapper\\HospitalSystem.Mapper.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Mapper\\HospitalSystem.Mapper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.10.0\\fluentvalidation.dependencyinjectionextensions.11.10.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.0\\microsoft.aspnetcore.cryptography.internal.7.0.0.nupkg.sha512",

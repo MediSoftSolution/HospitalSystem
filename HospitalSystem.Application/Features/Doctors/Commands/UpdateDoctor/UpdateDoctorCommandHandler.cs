@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HospitalSystem.Domain.Entities;
 
 namespace HospitalSystem.Application.Features.Doctors.Commands.UpdateDoctor
 {
@@ -17,9 +18,22 @@ namespace HospitalSystem.Application.Features.Doctors.Commands.UpdateDoctor
         {
         }
 
-        public Task<Unit> Handle(UpdateDoctorCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateDoctorCommandRequest request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var product = await unitOfWork.GetReadRepository<Doctor>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
+
+            var map = mapper.Map<Doctor, UpdateDoctorCommandRequest>(request);
+
+            var doctorSpeciality = await unitOfWork.GetReadRepository<Specialty>()
+                .GetAsync(x => x.Id == product.Id);
+
+            await unitOfWork.GetWriteRepository<Specialty>()
+                .HardDeleteAsync(doctorSpeciality);
+
+            await unitOfWork.GetWriteRepository<Doctor>().UpdateAsync(map);
+            await unitOfWork.SaveAsync();
+
+            return Unit.Value;
         }
     }
 }

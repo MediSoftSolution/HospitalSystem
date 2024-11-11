@@ -1,7 +1,7 @@
 ﻿
 using HospitalSystem.Domain.Entities;
 
-namespace YoutubeApi.Application.Features.Products.Queries.GetAllProducts
+namespace HospitalSystem.Application.Features.Doctors.Queries.GetAllDoctors
 {
     public class GetAllDoctorsQueryResponse
     {
@@ -11,8 +11,8 @@ namespace YoutubeApi.Application.Features.Products.Queries.GetAllProducts
         public string? About { get; set; }
         public Dictionary<DayOfWeek, WorkingTime> WorkingTimes { get; set; }
         public decimal ConsultingFee { get; set; }
-        public string Specialty { get; set; }
-        public string Office { get; set; }
-        public string PhotoUrl { get; set; }
+        public int SpecialtyId { get; set; }
+        public int OfficeId { get; set; }
+        public int PhotoId { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using HospitalSystem.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace YoutubeApi.Application.Features.Products.Queries.GetAllProducts
+namespace HospitalSystem.Application.Features.Doctors.Queries.GetAllDoctors
 {
     public class GetAllDoctorsQueryHandler : IRequestHandler<GetAllDoctorsQueryRequest, IList<GetAllDoctorsQueryResponse>>
     {
@@ -18,11 +18,13 @@ namespace YoutubeApi.Application.Features.Products.Queries.GetAllProducts
         }
         public async Task<IList<GetAllDoctorsQueryResponse>> Handle(GetAllDoctorsQueryRequest request, CancellationToken cancellationToken)
         {
-            var doctors = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync(include: x => x.Include(d => d.Specialty).Include(d => d.Photo));
+            var doctors = await unitOfWork
+                           .GetReadRepository<Doctor>()
+                           .GetAllAsync(include: x => x.Include(d => d.Specialty).Include(d => d.Photo));
 
-            var map = mapper.Map<GetAllDoctorsQueryResponse, Doctor>(doctors);
+            var doctorDtos = mapper.Map<IList<GetAllDoctorsQueryResponse>>(doctors);
 
-            return map;
+            return doctorDtos;
         }
     }
 }

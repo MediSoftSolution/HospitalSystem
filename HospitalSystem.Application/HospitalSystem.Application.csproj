@@ -14,8 +14,9 @@
       <Folder Include="Beheviors\" />
       <Folder Include="DTOs\" />
       <Folder Include="Exceptions\" />
-      <Folder Include="Features\Doctors\Rules\" />
       <Folder Include="Features\Doctors\Exceptions\" />
+      <Folder Include="Features\Offices\Exceptions\" />
+      <Folder Include="Features\Specialties\Exceptions\" />
     </ItemGroup>
 
     <ItemGroup>

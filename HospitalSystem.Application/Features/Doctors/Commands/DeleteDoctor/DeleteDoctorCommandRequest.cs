@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Features.Doctors.Commands.DeleteDoctor
 {
-    public class UpdateDoctorCommandRequest : IRequest<Unit>
+    public class DeleteDoctorCommandRequest : IRequest<Unit>
     {
+        public int Id { get; set; }
     }
 }

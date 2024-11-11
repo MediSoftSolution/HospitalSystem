@@ -8,18 +8,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HospitalSystem.Domain.Entities;
 
 namespace HospitalSystem.Application.Features.Doctors.Commands.DeleteDoctor
 {
-    public class UpdateDoctorCommandHandler : BaseHandler, IRequestHandler<UpdateDoctorCommandRequest, Unit>
+    public class DeleteDoctorCommandHandler : BaseHandler, IRequestHandler<DeleteDoctorCommandRequest, Unit>
     {
-        public UpdateDoctorCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public DeleteDoctorCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 
-        public Task<Unit> Handle(UpdateDoctorCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteDoctorCommandRequest request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var doctor = await unitOfWork.GetReadRepository<Doctor>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
+            doctor.IsDeleted = true;
+
+            await unitOfWork.GetWriteRepository<Doctor>().UpdateAsync(doctor);
+            await unitOfWork.SaveAsync();
+
+            return Unit.Value;        
         }
     }
 }

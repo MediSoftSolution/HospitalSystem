@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj",
       "projectName": "HospitalSystem.Infrastructure",
-      "projectPath": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\HospitalSystem\\HospitalSystem.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -4,10 +4,9 @@ namespace HospitalSystem.Domain.Entities;
 
 public class Specialty : EntityBase
 {
-    public string Name { get; set;}
+    public string Name { get; set;} = string.Empty;
     public List<Doctor> Doctors { get; set; }
-    public int OfficeId { get; set; }
-    public Office Office { get; set; }
+    public int PhotoId { get; set; }
     public Photo Photo { get; set; }
 
     public Specialty()
