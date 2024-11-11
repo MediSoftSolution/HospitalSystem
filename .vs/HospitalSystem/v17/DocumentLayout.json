@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\features\\offices\\commands\\createoffice\\createofficecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\features\\offices\\commands\\createoffice\\createofficecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\features\\offices\\commands\\createoffice\\createofficecommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\features\\offices\\commands\\createoffice\\createofficecommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\features\\offices\\commands\\createoffice\\createofficecommandrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\features\\offices\\commands\\createoffice\\createofficecommandrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\features\\offices\\commands\\createoffice\\createofficecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\features\\offices\\commands\\createoffice\\createofficecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D0EE27BC-5E4B-44A5-8CCB-7EB513008288}|HospitalSystem.Persistence\\HospitalSystem.Persistence.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.persistence\\repositories\\readrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,8 +70,7 @@
               "RelativeToolTip": "HospitalSystem.Persistence\\UnitOfWorks\\UnitOfWork.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAawBMAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T18:45:10.539Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T18:45:10.539Z"
             },
             {
               "$type": "Document",
@@ -83,8 +82,7 @@
               "RelativeToolTip": "HospitalSystem.Persistence\\Repositories\\ReadRepository.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAawBkAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T18:45:10.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T18:45:10.552Z"
             },
             {
               "$type": "Document",
@@ -96,12 +94,11 @@
               "RelativeToolTip": "HospitalSystem.API\\Controllers\\OfficeController.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAzwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T18:45:01.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T18:45:01.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CreateOfficeCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Features\\Offices\\Commands\\CreateOffice\\CreateOfficeCommandHandler.cs",
               "RelativeDocumentMoniker": "HospitalSystem.Application\\Features\\Offices\\Commands\\CreateOffice\\CreateOfficeCommandHandler.cs",
@@ -114,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "CreateOfficeCommandRequest.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Features\\Offices\\Commands\\CreateOffice\\CreateOfficeCommandRequest.cs",
               "RelativeDocumentMoniker": "HospitalSystem.Application\\Features\\Offices\\Commands\\CreateOffice\\CreateOfficeCommandRequest.cs",
@@ -127,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CreateOfficeCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Features\\Offices\\Commands\\CreateOffice\\CreateOfficeCommandValidator.cs",
               "RelativeDocumentMoniker": "HospitalSystem.Application\\Features\\Offices\\Commands\\CreateOffice\\CreateOfficeCommandValidator.cs",
@@ -148,8 +145,7 @@
               "RelativeToolTip": "HospitalSystem.Application\\Features\\Doctors\\Queries\\GetAllDoctors\\GetAllDoctorsQueryHandler.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAIA1wBMAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T18:45:10.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T18:45:10.525Z"
             },
             {
               "$type": "Document",
@@ -161,8 +157,7 @@
               "RelativeToolTip": "HospitalSystem.API\\Controllers\\DoctorController.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAIA1wBYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T18:45:10.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T18:45:10.511Z"
             },
             {
               "$type": "Document",
@@ -174,8 +169,7 @@
               "RelativeToolTip": "HospitalSystem.Domain\\Entities\\Office.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T18:22:39.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-09T18:22:39.526Z"
             }
           ]
         }
