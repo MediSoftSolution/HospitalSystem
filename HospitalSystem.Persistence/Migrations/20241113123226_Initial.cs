@@ -206,18 +206,12 @@ namespace HospitalSystem.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhotoId = table.Column<int>(type: "int", nullable: false),
-                    OfficeId = table.Column<int>(type: "int", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Specialties", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Specialties_Offices_OfficeId",
-                        column: x => x.OfficeId,
-                        principalTable: "Offices",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Specialties_Photos_PhotoId",
                         column: x => x.PhotoId,
@@ -303,8 +297,7 @@ namespace HospitalSystem.Persistence.Migrations
                     Day = table.Column<int>(type: "int", nullable: false),
                     Start = table.Column<TimeSpan>(type: "time", nullable: false),
                     End = table.Column<TimeSpan>(type: "time", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DoctorId1 = table.Column<int>(type: "int", nullable: false),
+                    DoctorId = table.Column<int>(type: "int", nullable: true),
                     OfficeId = table.Column<int>(type: "int", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
@@ -313,11 +306,10 @@ namespace HospitalSystem.Persistence.Migrations
                 {
                     table.PrimaryKey("PK_WorkingTimes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_WorkingTimes_Doctors_DoctorId1",
-                        column: x => x.DoctorId1,
+                        name: "FK_WorkingTimes_Doctors_DoctorId",
+                        column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_WorkingTimes_Offices_OfficeId",
                         column: x => x.OfficeId,
@@ -395,19 +387,14 @@ namespace HospitalSystem.Persistence.Migrations
                 column: "OfficeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Specialties_OfficeId",
-                table: "Specialties",
-                column: "OfficeId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Specialties_PhotoId",
                 table: "Specialties",
                 column: "PhotoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WorkingTimes_DoctorId1",
+                name: "IX_WorkingTimes_DoctorId",
                 table: "WorkingTimes",
-                column: "DoctorId1");
+                column: "DoctorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WorkingTimes_OfficeId",

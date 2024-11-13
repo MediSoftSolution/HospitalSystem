@@ -209,15 +209,10 @@ namespace HospitalSystem.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("OfficeId")
-                        .HasColumnType("int");
-
                     b.Property<int>("PhotoId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OfficeId");
 
                     b.HasIndex("PhotoId");
 
@@ -314,10 +309,7 @@ namespace HospitalSystem.Persistence.Migrations
                     b.Property<int>("Day")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("DoctorId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("DoctorId1")
+                    b.Property<int?>("DoctorId")
                         .HasColumnType("int");
 
                     b.Property<TimeSpan>("End")
@@ -334,7 +326,7 @@ namespace HospitalSystem.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DoctorId1");
+                    b.HasIndex("DoctorId");
 
                     b.HasIndex("OfficeId");
 
@@ -499,10 +491,6 @@ namespace HospitalSystem.Persistence.Migrations
 
             modelBuilder.Entity("HospitalSystem.Domain.Entities.Specialty", b =>
                 {
-                    b.HasOne("HospitalSystem.Domain.Entities.Office", null)
-                        .WithMany("Specialties")
-                        .HasForeignKey("OfficeId");
-
                     b.HasOne("HospitalSystem.Domain.Entities.Photo", "Photo")
                         .WithMany()
                         .HasForeignKey("PhotoId")
@@ -514,17 +502,13 @@ namespace HospitalSystem.Persistence.Migrations
 
             modelBuilder.Entity("HospitalSystem.Domain.Entities.WorkingTime", b =>
                 {
-                    b.HasOne("HospitalSystem.Domain.Entities.Doctor", "Doctor")
+                    b.HasOne("HospitalSystem.Domain.Entities.Doctor", null)
                         .WithMany("WorkingTimes")
-                        .HasForeignKey("DoctorId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DoctorId");
 
                     b.HasOne("HospitalSystem.Domain.Entities.Office", null)
                         .WithMany("WorkingTimes")
                         .HasForeignKey("OfficeId");
-
-                    b.Navigation("Doctor");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -588,8 +572,6 @@ namespace HospitalSystem.Persistence.Migrations
             modelBuilder.Entity("HospitalSystem.Domain.Entities.Office", b =>
                 {
                     b.Navigation("Photos");
-
-                    b.Navigation("Specialties");
 
                     b.Navigation("WorkingTimes");
                 });

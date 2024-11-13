@@ -9,7 +9,7 @@ namespace HospitalSystem.Application.Features.Specialties.Commands.CreateSpecial
 {
     public class CreateSpecialityCommandHandler : BaseHandler, IRequestHandler<CreateSpecialityCommandRequest, Unit>
     {
-        public CreateSpecialityCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public CreateSpecialityCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 

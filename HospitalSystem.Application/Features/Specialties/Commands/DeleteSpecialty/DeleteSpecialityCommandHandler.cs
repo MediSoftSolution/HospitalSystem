@@ -14,7 +14,7 @@ namespace HospitalSystem.Application.Features.Specialties.Commands.DeleteSpecial
 {
     public class DeleteSpecialityCommandHandler : BaseHandler, IRequestHandler<DeleteSpecialityCommandRequest, Unit>
     {
-        public DeleteSpecialityCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public DeleteSpecialityCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 

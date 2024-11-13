@@ -6,24 +6,21 @@ using System.Linq;
 
 namespace HospitalSystem.Mapper.AutoMapper
 {
-    public class Mapper : HospitalSystem.Application.Interfaces.AutoMapper.IMapper
+    public class Mapper : Application.Interfaces.AutoMapper.IMyMapper
     {
         public static List<TypePair> typePairs = new();
         private IMapper MapperContainer;
 
-        public Mapper()
-        {
-            ConfigureMappings();
-        }
-
         public TDestination Map<TDestination, TSource>(TSource source, string? ignore = null)
         {
+            RegisterTypePair<TSource, TDestination>();
             ConfigureMappings(ignore);
             return MapperContainer.Map<TSource, TDestination>(source);
         }
 
         public IList<TDestination> Map<TDestination, TSource>(IList<TSource> source, string? ignore = null)
         {
+            RegisterTypePair<TSource, TDestination>();
             ConfigureMappings(ignore); 
             return MapperContainer.Map<IList<TSource>, IList<TDestination>>(source);
         }

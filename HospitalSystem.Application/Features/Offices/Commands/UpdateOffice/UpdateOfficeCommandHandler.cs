@@ -14,7 +14,7 @@ namespace HospitalSystem.Application.Features.Offices.Commands.UpdateDoctor
 {
     public class UpdateOfficeCommandHandler : BaseHandler, IRequestHandler<UpdateOfficeCommandRequest, Unit>
     {
-        public UpdateOfficeCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public UpdateOfficeCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 

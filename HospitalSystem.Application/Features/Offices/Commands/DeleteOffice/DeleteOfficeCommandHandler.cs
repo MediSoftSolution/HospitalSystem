@@ -14,7 +14,7 @@ namespace HospitalSystem.Application.Features.Offices.Commands.DeleteOffice
 {
     public class DeleteOfficeCommandHandler : BaseHandler, IRequestHandler<DeleteOfficeCommandRequest, Unit>
     {
-        public DeleteOfficeCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public DeleteOfficeCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 

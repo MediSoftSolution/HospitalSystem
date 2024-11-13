@@ -14,7 +14,7 @@ namespace HospitalSystem.Application.Features.Specialities.Commands.UpdateSpecia
 {
     public class UpdateSpecialityCommandHandler : BaseHandler, IRequestHandler<UpdateSpecialityCommandRequest, Unit>
     {
-        public UpdateSpecialityCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public UpdateSpecialityCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 

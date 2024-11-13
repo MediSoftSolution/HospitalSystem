@@ -1,4 +1,5 @@
-﻿using HospitalSystem.Application.Bases;
+﻿using AutoMapper;
+using HospitalSystem.Application.Bases;
 using HospitalSystem.Application.Features.Doctors.Commands.CreateDoctor;
 using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
@@ -10,16 +11,20 @@ namespace HospitalSystem.Application.Features.Offices.Commands.CreateOffice
 {
     public class CreateOfficeCommandHandler : BaseHandler, IRequestHandler<CreateOfficeCommandRequest, Unit>
     {
-        public CreateOfficeCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        private readonly IMapper _mapper;
+        public CreateOfficeCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IMapper map) : base(mapper, unitOfWork, httpContextAccessor)
         {
+            _mapper = map;
         }
 
         public async Task<Unit> Handle(CreateOfficeCommandRequest request, CancellationToken cancellationToken)
         {
 
-            Office office = mapper.Map<Office, CreateOfficeCommandRequest>(request);
+            Office office = _mapper.Map<Office>(request);
 
             await unitOfWork.GetWriteRepository<Office>().AddAsync(office);
+            
+            unitOfWork.Save();
 
             return Unit.Value;
         }

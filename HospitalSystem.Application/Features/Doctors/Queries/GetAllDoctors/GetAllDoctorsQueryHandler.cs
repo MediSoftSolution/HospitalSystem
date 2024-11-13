@@ -9,9 +9,9 @@ namespace HospitalSystem.Application.Features.Doctors.Queries.GetAllDoctors
     public class GetAllDoctorsQueryHandler : IRequestHandler<GetAllDoctorsQueryRequest, IList<GetAllDoctorsQueryResponse>>
     {
         private readonly IUnitOfWork unitOfWork;
-        private readonly IMapper mapper;
+        private readonly IMyMapper mapper;
 
-        public GetAllDoctorsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetAllDoctorsQueryHandler(IUnitOfWork unitOfWork, IMyMapper mapper)
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;

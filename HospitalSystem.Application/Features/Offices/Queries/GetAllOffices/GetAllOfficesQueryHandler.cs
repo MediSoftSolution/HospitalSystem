@@ -1,4 +1,4 @@
-﻿using HospitalSystem.Application.Interfaces.AutoMapper;
+﻿using AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
@@ -9,12 +9,12 @@ namespace HospitalSystem.Application.Features.Offices.Queries.GetAllOffices
     public class GetAllOfficesQueryHandler : IRequestHandler<GetAllOfficesQueryRequest, IList<GetAllOfficesQueryResponse>>
     {
         private readonly IUnitOfWork unitOfWork;
-        private readonly IMapper mapper;
+        private readonly IMapper _mapper;
 
         public GetAllOfficesQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
-            this.mapper = mapper;
+            _mapper = mapper;
         }
         public async Task<IList<GetAllOfficesQueryResponse>> Handle(GetAllOfficesQueryRequest request, CancellationToken cancellationToken)
         {
@@ -22,7 +22,11 @@ namespace HospitalSystem.Application.Features.Offices.Queries.GetAllOffices
                            .GetReadRepository<Office>()
                            .GetAllAsync(include: x => x.Include(d => d.Photos).Include(d => d.WorkingTimes));
 
-            var officeDtos = mapper.Map<IList<GetAllOfficesQueryResponse>>(offices);
+            List<GetAllOfficesQueryResponse> officeDtos = new();
+            foreach (var item in offices)
+            {
+                officeDtos.Add(_mapper.Map<GetAllOfficesQueryResponse>(item));
+            }
 
             return officeDtos;
         }

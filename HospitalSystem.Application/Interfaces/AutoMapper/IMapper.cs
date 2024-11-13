@@ -1,6 +1,6 @@
 namespace HospitalSystem.Application.Interfaces.AutoMapper;
 
-public interface IMapper
+public interface IMyMapper
 {
     TDestination Map<TDestination, TSource>(TSource source, string? ignore = null);
 

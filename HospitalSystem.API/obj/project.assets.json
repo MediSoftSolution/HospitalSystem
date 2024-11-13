@@ -3225,6 +3225,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "FluentValidation.DependencyInjectionExtensions": "11.10.0",
           "HospitalSystem.Domain": "1.0.0",
           "MediatR": "12.4.1",
