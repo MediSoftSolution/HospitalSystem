@@ -729,6 +729,25 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.15.1"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/7.0.0": {
         "type": "package",
         "compile": {
@@ -3268,6 +3287,21 @@
           "bin/placeholder/HospitalSystem.Domain.dll": {}
         }
       },
+      "HospitalSystem.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "HospitalSystem.Application": "1.0.0",
+          "HospitalSystem.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HospitalSystem.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HospitalSystem.Infrastructure.dll": {}
+        }
+      },
       "HospitalSystem.Mapper/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -4186,6 +4220,21 @@
         "lib/netstandard2.0/MediatR.Contracts.xml",
         "mediatr.contracts.2.0.1.nupkg.sha512",
         "mediatr.contracts.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.0": {
+      "sha512": "q2suMVl1gO6rBJkV7rxm0F2sBufValm2RKxY3zoWN4y6cAufDJYmzpLWPKju3kKFJFKNgivWgoTw0dvf4W5QDQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.7.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/7.0.0": {
@@ -9407,6 +9456,11 @@
       "path": "../HospitalSystem.Domain/HospitalSystem.Domain.csproj",
       "msbuildProject": "../HospitalSystem.Domain/HospitalSystem.Domain.csproj"
     },
+    "HospitalSystem.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../HospitalSystem.Infrastructure/HospitalSystem.Infrastructure.csproj",
+      "msbuildProject": "../HospitalSystem.Infrastructure/HospitalSystem.Infrastructure.csproj"
+    },
     "HospitalSystem.Mapper/1.0.0": {
       "type": "project",
       "path": "../HospitalSystem.Mapper/HospitalSystem.Mapper.csproj",
@@ -9420,8 +9474,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj",
       "HospitalSystem.Application >= 1.0.0",
+      "HospitalSystem.Infrastructure >= 1.0.0",
       "HospitalSystem.Mapper >= 1.0.0",
       "HospitalSystem.Persistence >= 1.0.0",
       "MediatR >= 12.4.1",
@@ -9466,11 +9520,11 @@
             "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\HospitalSystem.Application.csproj": {
               "projectPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\HospitalSystem.Application.csproj"
             },
+            "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj"
+            },
             "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Mapper\\HospitalSystem.Mapper.csproj": {
               "projectPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Mapper\\HospitalSystem.Mapper.csproj"
-            },
-            "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj"
             },
             "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Persistence.csproj": {
               "projectPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Persistence.csproj"
@@ -9532,16 +9586,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

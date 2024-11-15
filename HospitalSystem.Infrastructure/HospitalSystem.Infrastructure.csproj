@@ -7,6 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\HospitalSystem.Application\HospitalSystem.Application.csproj" />
       <ProjectReference Include="..\HospitalSystem.Domain\HospitalSystem.Domain.csproj" />
     </ItemGroup>

@@ -1,6 +1,7 @@
 using HospitalSystem.Application;
-using HospitalSystem.Mapper;
 using HospitalSystem.Persistence;
+using HospitalSystem.Infrastructure;
+using HospitalSystem.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 
