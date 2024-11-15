@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "76Riptk5XFo=",
-  "success": true,
+  "dgSpecHash": "MU0ShdspMts=",
+  "success": false,
   "projectFilePath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.API\\HospitalSystem.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
@@ -196,5 +196,15 @@
     "C:\\Users\\HP\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

@@ -13,9 +13,6 @@
     <ItemGroup>
       <Folder Include="Beheviors\" />
       <Folder Include="Exceptions\" />
-      <Folder Include="Features\Auth\Commands\RevokeAll\" />
-      <Folder Include="Features\Auth\Commands\Revoke\" />
-      <Folder Include="Features\Auth\Commands\RefreshToken\" />
       <Folder Include="Features\Doctors\Exceptions\" />
       <Folder Include="Features\Offices\Exceptions\" />
       <Folder Include="Features\Specialties\Exceptions\" />

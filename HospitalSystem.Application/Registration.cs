@@ -20,7 +20,7 @@ public static class Registration
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
 
         services.AddValidatorsFromAssembly(assembly);
-        ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
+        ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("en");
 
         //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
 

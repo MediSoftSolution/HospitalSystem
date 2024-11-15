@@ -9420,6 +9420,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj",
       "HospitalSystem.Application >= 1.0.0",
       "HospitalSystem.Mapper >= 1.0.0",
       "HospitalSystem.Persistence >= 1.0.0",
@@ -9467,6 +9468,9 @@
             },
             "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Mapper\\HospitalSystem.Mapper.csproj": {
               "projectPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Mapper\\HospitalSystem.Mapper.csproj"
+            },
+            "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj"
             },
             "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Persistence.csproj": {
               "projectPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Persistence.csproj"
@@ -9528,5 +9532,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Persistence\\HospitalSystem.Infrastructure.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

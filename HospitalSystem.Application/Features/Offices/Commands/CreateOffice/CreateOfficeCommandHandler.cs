@@ -20,7 +20,7 @@ namespace HospitalSystem.Application.Features.Offices.Commands.CreateOffice
         public async Task<Unit> Handle(CreateOfficeCommandRequest request, CancellationToken cancellationToken)
         {
 
-            Office office = _mapper.Map<Office>(request);
+            Office office = mapper.Map<Office>(request);
 
             await unitOfWork.GetWriteRepository<Office>().AddAsync(office);
             

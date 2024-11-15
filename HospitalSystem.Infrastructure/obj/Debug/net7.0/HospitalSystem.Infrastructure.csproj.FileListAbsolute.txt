@@ -22,3 +22,9 @@ C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.Infrastructure\obj\De
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.Infrastructure\obj\Debug\net7.0\refint\HospitalSystem.Infrastructure.dll
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.Infrastructure\obj\Debug\net7.0\HospitalSystem.Infrastructure.pdb
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.Infrastructure\obj\Debug\net7.0\ref\HospitalSystem.Infrastructure.dll
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.Infrastructure\bin\Debug\net7.0\HospitalSystem.Application.dll
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.Infrastructure\bin\Debug\net7.0\HospitalSystem.Domain.dll
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.Infrastructure\bin\Debug\net7.0\HospitalSystem.Application.pdb
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.Infrastructure\bin\Debug\net7.0\HospitalSystem.Domain.pdb
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.Infrastructure\obj\Debug\net7.0\HospitalSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.Infrastructure\obj\Debug\net7.0\Hospital.2D89DDD6.Up2Date
