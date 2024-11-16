@@ -11,7 +11,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Beheviors\" />
       <Folder Include="Exceptions\" />
       <Folder Include="Features\Doctors\Exceptions\" />
       <Folder Include="Features\Offices\Exceptions\" />
