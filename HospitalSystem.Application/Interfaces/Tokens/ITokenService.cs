@@ -14,5 +14,6 @@ namespace HospitalSystem.Application.Interfaces.Tokens
         Task<JwtSecurityToken> CreateToken(User user, IList<string> roles);
         string GenerateRefreshToken();
         ClaimsPrincipal? GetPrincipalFromExpiredToken(string? token);
+        Task ValidateNonceAsync(string token);
     }
 }

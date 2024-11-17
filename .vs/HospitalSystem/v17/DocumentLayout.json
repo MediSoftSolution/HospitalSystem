@@ -3,28 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\exceptions\\exceptionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\exceptions\\exceptionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\beheviors\\requestvalidationpipeline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\beheviors\\requestvalidationpipeline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\exceptions\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\exceptions\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\interfaces\\rediscache\\irediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\interfaces\\rediscache\\irediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\exceptions\\configureexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\exceptions\\configureexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\beheviors\\rediscachebehevior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\beheviors\\rediscachebehevior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\features\\auth\\commands\\login\\logincommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\features\\auth\\commands\\login\\logincommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E74B10D0-CAE5-4BBB-B4E9-3ADAFA5C4CE1}|HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.infrastructure\\rediscache\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E74B10D0-CAE5-4BBB-B4E9-3ADAFA5C4CE1}|HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj|solutionrelative:hospitalsystem.infrastructure\\rediscache\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A690236B-9389-4F51-877E-6A493BB669AB}|HospitalSystem.API\\HospitalSystem.API.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A690236B-9389-4F51-877E-6A493BB669AB}|HospitalSystem.API\\HospitalSystem.API.csproj|solutionrelative:hospitalsystem.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\beheviors\\fluentvalidationbehevior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\beheviors\\fluentvalidationbehevior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A690236B-9389-4F51-877E-6A493BB669AB}|HospitalSystem.API\\HospitalSystem.API.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A690236B-9389-4F51-877E-6A493BB669AB}|HospitalSystem.API\\HospitalSystem.API.csproj|solutionrelative:hospitalsystem.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E74B10D0-CAE5-4BBB-B4E9-3ADAFA5C4CE1}|HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.infrastructure\\tokens\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E74B10D0-CAE5-4BBB-B4E9-3ADAFA5C4CE1}|HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj|solutionrelative:hospitalsystem.infrastructure\\tokens\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\interfaces\\tokens\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\interfaces\\tokens\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E74B10D0-CAE5-4BBB-B4E9-3ADAFA5C4CE1}|HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.infrastructure\\tokens\\tokensettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E74B10D0-CAE5-4BBB-B4E9-3ADAFA5C4CE1}|HospitalSystem.Infrastructure\\HospitalSystem.Infrastructure.csproj|solutionrelative:hospitalsystem.infrastructure\\tokens\\tokensettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.application\\features\\auth\\commands\\login\\logincommandrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{663F3970-F142-44F9-BE91-0EB224B8A7F9}|HospitalSystem.Application\\HospitalSystem.Application.csproj|solutionrelative:hospitalsystem.application\\features\\auth\\commands\\login\\logincommandrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,80 +74,158 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ExceptionModel.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Exceptions\\ExceptionModel.cs",
-              "RelativeDocumentMoniker": "HospitalSystem.Application\\Exceptions\\ExceptionModel.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Exceptions\\ExceptionModel.cs",
-              "RelativeToolTip": "HospitalSystem.Application\\Exceptions\\ExceptionModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T17:57:46.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExceptionMiddleware.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Exceptions\\ExceptionMiddleware.cs",
-              "RelativeDocumentMoniker": "HospitalSystem.Application\\Exceptions\\ExceptionMiddleware.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Exceptions\\ExceptionMiddleware.cs",
-              "RelativeToolTip": "HospitalSystem.Application\\Exceptions\\ExceptionMiddleware.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T17:55:31.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ConfigureExceptionMiddleware.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Exceptions\\ConfigureExceptionMiddleware.cs",
-              "RelativeDocumentMoniker": "HospitalSystem.Application\\Exceptions\\ConfigureExceptionMiddleware.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Exceptions\\ConfigureExceptionMiddleware.cs",
-              "RelativeToolTip": "HospitalSystem.Application\\Exceptions\\ConfigureExceptionMiddleware.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T17:55:16.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FluentValidationBehevior.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Beheviors\\FluentValidationBehevior.cs",
-              "RelativeDocumentMoniker": "HospitalSystem.Application\\Beheviors\\FluentValidationBehevior.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Beheviors\\FluentValidationBehevior.cs",
-              "RelativeToolTip": "HospitalSystem.Application\\Beheviors\\FluentValidationBehevior.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T17:52:29.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Registration.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Registration.cs",
               "RelativeDocumentMoniker": "HospitalSystem.Application\\Registration.cs",
               "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Registration.cs",
               "RelativeToolTip": "HospitalSystem.Application\\Registration.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAABPAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAswBwAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T17:51:41.024Z",
+              "WhenOpened": "2024-11-17T20:09:04.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ITokenService.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Interfaces\\Tokens\\ITokenService.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Application\\Interfaces\\Tokens\\ITokenService.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Interfaces\\Tokens\\ITokenService.cs",
+              "RelativeToolTip": "HospitalSystem.Application\\Interfaces\\Tokens\\ITokenService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T20:05:35.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TokenSettings.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\Tokens\\TokenSettings.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Infrastructure\\Tokens\\TokenSettings.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\Tokens\\TokenSettings.cs",
+              "RelativeToolTip": "HospitalSystem.Infrastructure\\Tokens\\TokenSettings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T20:05:18.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRedisCacheService.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Interfaces\\RedisCache\\IRedisCacheService.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Application\\Interfaces\\RedisCache\\IRedisCacheService.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Interfaces\\RedisCache\\IRedisCacheService.cs",
+              "RelativeToolTip": "HospitalSystem.Application\\Interfaces\\RedisCache\\IRedisCacheService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T20:04:06.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RedisCacheService.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\RedisCache\\RedisCacheService.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Infrastructure\\RedisCache\\RedisCacheService.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\RedisCache\\RedisCacheService.cs",
+              "RelativeToolTip": "HospitalSystem.Infrastructure\\RedisCache\\RedisCacheService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T19:54:18.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FluentValidationBehevior.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Beheviors\\FluentValidationBehevior.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Application\\Beheviors\\FluentValidationBehevior.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Beheviors\\FluentValidationBehevior.cs",
+              "RelativeToolTip": "HospitalSystem.Application\\Beheviors\\FluentValidationBehevior.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAEwCIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T19:31:56.923Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.API\\Program.cs",
-              "RelativeDocumentMoniker": "HospitalSystem.API\\Program.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.API\\Program.cs",
-              "RelativeToolTip": "HospitalSystem.API\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "HospitalSystem.API\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAMwCIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T17:51:30.051Z",
+              "WhenOpened": "2024-11-17T19:30:46.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RedisCacheBehevior.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Beheviors\\RedisCacheBehevior.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Application\\Beheviors\\RedisCacheBehevior.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Beheviors\\RedisCacheBehevior.cs",
+              "RelativeToolTip": "HospitalSystem.Application\\Beheviors\\RedisCacheBehevior.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAADgvx4AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T19:30:46.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginCommandRequest.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Features\\Auth\\Commands\\Login\\LoginCommandRequest.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Application\\Features\\Auth\\Commands\\Login\\LoginCommandRequest.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Features\\Auth\\Commands\\Login\\LoginCommandRequest.cs",
+              "RelativeToolTip": "HospitalSystem.Application\\Features\\Auth\\Commands\\Login\\LoginCommandRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T19:13:06.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Features\\Auth\\Commands\\Login\\LoginCommandHandler.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Application\\Features\\Auth\\Commands\\Login\\LoginCommandHandler.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Features\\Auth\\Commands\\Login\\LoginCommandHandler.cs",
+              "RelativeToolTip": "HospitalSystem.Application\\Features\\Auth\\Commands\\Login\\LoginCommandHandler.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAwCAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:59:54.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\Tokens\\TokenService.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Infrastructure\\Tokens\\TokenService.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Infrastructure\\Tokens\\TokenService.cs",
+              "RelativeToolTip": "HospitalSystem.Infrastructure\\Tokens\\TokenService.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAYwE0AAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:59:09.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RequestValidationPipeline.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Beheviors\\RequestValidationPipeline.cs",
+              "RelativeDocumentMoniker": "HospitalSystem.Application\\Beheviors\\RequestValidationPipeline.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.Application\\Beheviors\\RequestValidationPipeline.cs",
+              "RelativeToolTip": "HospitalSystem.Application\\Beheviors\\RequestValidationPipeline.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAQwEIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:58:59.264Z",
               "EditorCaption": ""
             }
           ]

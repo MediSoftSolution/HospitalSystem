@@ -31,6 +31,13 @@ namespace HospitalSystem.Application.Features.Auth.Commands.Login
         public async Task<LoginCommandResponse> Handle(LoginCommandRequest request, CancellationToken cancellationToken)
         {
             User user = await userManager.FindByEmailAsync(request.Email);
+
+            string nonce = request.Nonce;
+            if (!Guid.TryParse(nonce, out _))
+            {
+                throw new UnauthorizedAccessException("Invalid nonce.");
+            }
+
             bool checkPassword = await userManager.CheckPasswordAsync(user, request.Password);
 
             await authRules.EmailOrPasswordShouldNotBeInvalid(user, checkPassword);

@@ -12,5 +12,6 @@ namespace HospitalSystem.Infrastructure.Tokens
         public string Issuer { get; set; }
         public string Secret { get; set; }
         public int TokenValidityInMunitues { get; set; }
+
     }
 }

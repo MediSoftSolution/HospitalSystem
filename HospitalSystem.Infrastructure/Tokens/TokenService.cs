@@ -1,8 +1,10 @@
-﻿using HospitalSystem.Application.Interfaces.Tokens;
+﻿using HospitalSystem.Application.Interfaces.RedisCache;
+using HospitalSystem.Application.Interfaces.Tokens;
 using HospitalSystem.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using StackExchange.Redis;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -14,25 +16,33 @@ namespace HospitalSystem.Infrastructure.Tokens
     {
         private readonly UserManager<User> userManager;
         private readonly TokenSettings tokenSettings;
+        private readonly IRedisCacheService redisCacheService;
 
-        public TokenService(IOptions<TokenSettings> options, UserManager<User> userManager)
+
+        public TokenService(IOptions<TokenSettings> options, UserManager<User> userManager, IRedisCacheService redisCacheService)
         {
             tokenSettings = options.Value;
             this.userManager = userManager;
+            this.redisCacheService = redisCacheService;
         }
         public async Task<JwtSecurityToken> CreateToken(User user, IList<string> roles)
         {
+
+            var nonce = Guid.NewGuid().ToString();
             var claims = new List<Claim>()
             {
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email)
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim("nonce", nonce)
             };
 
             foreach (var role in roles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
+
+           
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenSettings.Secret));
 
@@ -46,8 +56,29 @@ namespace HospitalSystem.Infrastructure.Tokens
 
             await userManager.AddClaimsAsync(user, claims);
 
+            await redisCacheService.SetAsync($"nonce:{nonce}", true, DateTime.Now.AddMinutes(60));
             return token;
 
+        }
+
+        public async Task ValidateNonceAsync(string token)
+        {
+            var principal = GetPrincipalFromExpiredToken(token);
+            var nonceClaim = principal?.Claims.FirstOrDefault(c => c.Type == "nonce");
+            var nonce = nonceClaim?.Value;
+
+            if (string.IsNullOrEmpty(nonce))
+            {
+                throw new UnauthorizedAccessException("Token does not contain a valid nonce.");
+            }
+
+            var isNonceUsed = await redisCacheService.GetAsync<bool>($"nonce:{nonce}");
+            if (!isNonceUsed)
+            {
+                throw new UnauthorizedAccessException("Invalid or reused nonce.");
+            }
+
+            await redisCacheService.SetAsync($"nonce:{nonce}", false, DateTime.Now.AddMinutes(60));
         }
 
         public string GenerateRefreshToken()
@@ -80,5 +111,8 @@ namespace HospitalSystem.Infrastructure.Tokens
             return principal;
 
         }
+
+        
+
     }
 }

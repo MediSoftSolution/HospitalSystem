@@ -7,6 +7,7 @@ namespace HospitalSystem.Application.Features.Auth.Commands.Login
     {
         public string Email { get; set; }
         public string Password { get; set; }
+        public string? Nonce { get; set; }
 
         public string CacheKey => "Login";
 
