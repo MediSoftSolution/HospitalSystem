@@ -4,6 +4,7 @@ using HospitalSystem.Application.Features.Auth.Commands.Register;
 using HospitalSystem.Application.Features.Auth.Commands.Revoke;
 using HospitalSystem.Application.Features.Auth.Commands.RevokeAll;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalSystem.API.Controllers
@@ -19,6 +20,7 @@ namespace HospitalSystem.API.Controllers
             _mediator = mediator;
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterCommandRequest request)
         {
@@ -26,6 +28,7 @@ namespace HospitalSystem.API.Controllers
             return StatusCode(StatusCodes.Status201Created);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Login(LoginCommandRequest request)
         {

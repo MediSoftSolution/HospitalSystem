@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HospitalSystem.Mapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9875ee7c231fc4727fc6b4bd85c126e24c1cdd10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87812abc276682d3c852e61685e4dfd9515ddb92")]
 [assembly: System.Reflection.AssemblyProductAttribute("HospitalSystem.Mapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HospitalSystem.Mapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

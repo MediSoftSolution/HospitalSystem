@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Reflection;
 using FluentValidation;
 using HospitalSystem.Application.Bases;
+using HospitalSystem.Application.Behaviors;
 using HospitalSystem.Application.Beheviors;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,8 +24,8 @@ public static class Registration
         services.AddValidatorsFromAssembly(assembly);
         ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("en");
 
-        //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
-        //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RedisCacheBehevior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RedisCacheBehevior<,>));
         services.AddScoped(typeof(IPipelineBehavior<,>), typeof(AuthorizationPipelineBehavior<,>));
 
     }

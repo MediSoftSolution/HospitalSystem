@@ -544,3 +544,8 @@ C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\HospitalSystem.Infrastructure.dll
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\HospitalSystem.Infrastructure.pdb
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\StackExchange.Redis.dll
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\SendGrid.dll
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\StarkbankEcdsa.dll

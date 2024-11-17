@@ -1,4 +1,6 @@
-﻿using HospitalSystem.Application.Interfaces.Tokens;
+﻿using HospitalSystem.Application.Interfaces.RedisCache;
+using HospitalSystem.Application.Interfaces.Tokens;
+using HospitalSystem.Infrastructure.RedisCache;
 using HospitalSystem.Infrastructure.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -15,8 +17,8 @@ namespace HospitalSystem.Infrastructure
             services.Configure<TokenSettings>(configuration.GetSection("JWT"));
             services.AddTransient<ITokenService, TokenService>();
 
-            //services.Configure<RedisCacheSettings>(configuration.GetSection("RedisCacheSettings"));
-            //services.AddTransient<IRedisCacheService, RedisCacheService>();
+            services.Configure<RedisCacheSettings>(configuration.GetSection("RedisCacheSettings"));
+            services.AddTransient<IRedisCacheService, RedisCacheService>();
 
             services.AddAuthentication(opt =>
             {
@@ -38,11 +40,11 @@ namespace HospitalSystem.Infrastructure
                 };
             });
 
-            //services.AddStackExchangeRedisCache(opt =>
-            //{
-            //    opt.Configuration = configuration["RedisCacheSettings:ConnectionString"];
-            //    opt.InstanceName = configuration["RedisCacheSettings:InstanceName"];
-            //});
+            services.AddStackExchangeRedisCache(opt =>
+            {
+                opt.Configuration = configuration["RedisCacheSettings:ConnectionString"];
+                opt.InstanceName = configuration["RedisCacheSettings:InstanceName"];
+            });
         }
     }
 }
