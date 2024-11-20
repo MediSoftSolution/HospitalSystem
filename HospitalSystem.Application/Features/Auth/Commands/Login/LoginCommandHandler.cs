@@ -32,11 +32,6 @@ namespace HospitalSystem.Application.Features.Auth.Commands.Login
         {
             User user = await userManager.FindByEmailAsync(request.Email);
 
-            string nonce = request.Nonce;
-            if (!Guid.TryParse(nonce, out _))
-            {
-                throw new UnauthorizedAccessException("Invalid nonce.");
-            }
 
             bool checkPassword = await userManager.CheckPasswordAsync(user, request.Password);
 

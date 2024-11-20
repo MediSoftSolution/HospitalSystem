@@ -56,30 +56,12 @@ namespace HospitalSystem.Infrastructure.Tokens
 
             await userManager.AddClaimsAsync(user, claims);
 
-            await redisCacheService.SetAsync($"nonce:{nonce}", true, DateTime.Now.AddMinutes(60));
+            //await redisCacheService.SetAsync($"nonce:{nonce}", true, DateTime.Now.AddMinutes(60));
             return token;
 
         }
 
-        public async Task ValidateNonceAsync(string token)
-        {
-            var principal = GetPrincipalFromExpiredToken(token);
-            var nonceClaim = principal?.Claims.FirstOrDefault(c => c.Type == "nonce");
-            var nonce = nonceClaim?.Value;
-
-            if (string.IsNullOrEmpty(nonce))
-            {
-                throw new UnauthorizedAccessException("Token does not contain a valid nonce.");
-            }
-
-            var isNonceUsed = await redisCacheService.GetAsync<bool>($"nonce:{nonce}");
-            if (!isNonceUsed)
-            {
-                throw new UnauthorizedAccessException("Invalid or reused nonce.");
-            }
-
-            await redisCacheService.SetAsync($"nonce:{nonce}", false, DateTime.Now.AddMinutes(60));
-        }
+        
 
         public string GenerateRefreshToken()
         {

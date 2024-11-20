@@ -4,6 +4,7 @@ using FluentValidation;
 using HospitalSystem.Application.Bases;
 using HospitalSystem.Application.Behaviors;
 using HospitalSystem.Application.Beheviors;
+using HospitalSystem.Application.Exceptions;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,7 +16,7 @@ public static class Registration
     {
         var assembly = Assembly.GetExecutingAssembly();
 
-        //services.AddTransient<ExceptionMiddleware>();
+        services.AddTransient<ExceptionMiddleware>();
 
         services.AddRulesFromAssemblyContaining(assembly, typeof(BaseRules));
 
@@ -25,7 +26,7 @@ public static class Registration
         ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("en");
 
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RedisCacheBehevior<,>));
+        //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RedisCacheBehevior<,>));
         services.AddScoped(typeof(IPipelineBehavior<,>), typeof(AuthorizationPipelineBehavior<,>));
 
     }
