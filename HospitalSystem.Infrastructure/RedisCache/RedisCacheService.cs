@@ -26,10 +26,11 @@ namespace HospitalSystem.Infrastructure.RedisCache
             return default;
         }
 
-        public async Task SetAsync<T>(string key, T value, DateTime? expirationTime = null)
+        public async Task SetAsync<T>(string key, T value, TimeSpan? expirationTime = null)
         {
-            TimeSpan timeUnitExpiration = expirationTime.Value - DateTime.Now;
-            await database.StringSetAsync(key, JsonConvert.SerializeObject(value), timeUnitExpiration);
+            TimeSpan effectiveExpiration = expirationTime ?? TimeSpan.FromMinutes(5);
+            await database.StringSetAsync(key, JsonConvert.SerializeObject(value), effectiveExpiration);
         }
+
     }
 }

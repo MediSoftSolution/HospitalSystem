@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{8E036848-317D-4568-9A10-C3B34659D328}|HospitalSystem.UnitTests\\HospitalSystem.UnitTests.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.unittests\\officetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E036848-317D-4568-9A10-C3B34659D328}|HospitalSystem.UnitTests\\HospitalSystem.UnitTests.csproj|solutionrelative:hospitalsystem.unittests\\officetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E036848-317D-4568-9A10-C3B34659D328}|HospitalSystem.UnitTests\\HospitalSystem.UnitTests.csproj|c:\\users\\hp\\desktop\\programs\\hospitalsystem\\hospitalsystem.unittests\\doctortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E036848-317D-4568-9A10-C3B34659D328}|HospitalSystem.UnitTests\\HospitalSystem.UnitTests.csproj|solutionrelative:hospitalsystem.unittests\\doctortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,32 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OfficeTests.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.UnitTests\\OfficeTests.cs",
-              "RelativeDocumentMoniker": "HospitalSystem.UnitTests\\OfficeTests.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.UnitTests\\OfficeTests.cs",
-              "RelativeToolTip": "HospitalSystem.UnitTests\\OfficeTests.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAUwCMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T19:28:36.098Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DoctorTests.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.UnitTests\\DoctorTests.cs",
-              "RelativeDocumentMoniker": "HospitalSystem.UnitTests\\DoctorTests.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.UnitTests\\DoctorTests.cs",
-              "RelativeToolTip": "HospitalSystem.UnitTests\\DoctorTests.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAswA0AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T19:25:55.969Z",
-              "EditorCaption": ""
             }
           ]
         }

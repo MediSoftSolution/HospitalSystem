@@ -33,8 +33,6 @@ namespace HospitalSystem.Application.Features.Doctors.Commands.CreateDoctor
         }
         private bool ContainValidWorkingTimes(Dictionary<DayOfWeek, WorkingTime> workingTimes)
         {
-            // Custom validation logic to ensure that the working times dictionary contains valid data.
-            // Example: Check that each DayOfWeek has valid WorkingTime values.
             return workingTimes != null && workingTimes.All(kv => kv.Value != null);
         }
     }
