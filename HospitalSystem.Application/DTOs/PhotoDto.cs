@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.DTOs
 {
-    public record PhotoDto(string Url, bool IsMain = false);
+    public sealed record PhotoDto(string Url, bool IsMain = false);
 }

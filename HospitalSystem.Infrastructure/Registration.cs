@@ -1,11 +1,15 @@
-﻿using HospitalSystem.Application.Interfaces.RedisCache;
+﻿using HospitalSystem.Application.Interfaces.Emails;
+using HospitalSystem.Application.Interfaces.RedisCache;
 using HospitalSystem.Application.Interfaces.Tokens;
+using HospitalSystem.Infrastructure.Emails;
 using HospitalSystem.Infrastructure.RedisCache;
 using HospitalSystem.Infrastructure.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using StackExchange.Redis;
+using System.Net.Mail;
 using System.Text;
 
 namespace HospitalSystem.Infrastructure
@@ -16,9 +20,12 @@ namespace HospitalSystem.Infrastructure
         {
             services.Configure<TokenSettings>(configuration.GetSection("JWT"));
             services.AddTransient<ITokenService, TokenService>();
+            services.AddTransient<ITokenBlacklistService, TokenBlacklistService>();
 
             services.Configure<RedisCacheSettings>(configuration.GetSection("RedisCacheSettings"));
             services.AddTransient<IRedisCacheService, RedisCacheService>();
+
+            services.AddTransient<IEmailService, EmailService>();
 
             services.AddAuthentication(opt =>
             {
@@ -29,22 +36,21 @@ namespace HospitalSystem.Infrastructure
                 opt.SaveToken = true;
                 opt.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
                     ValidateIssuerSigningKey = true,
+                    ValidateLifetime = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"])),
-                    ValidateLifetime = false,
                     ValidIssuer = configuration["JWT:Issuer"],
                     ValidAudience = configuration["JWT:Audience"],
-                    ClockSkew = TimeSpan.Zero
+                    ClockSkew = TimeSpan.Zero 
                 };
+
             });
 
-            services.AddStackExchangeRedisCache(opt =>
-            {
-                opt.Configuration = configuration["RedisCacheSettings:ConnectionString"];
-                opt.InstanceName = configuration["RedisCacheSettings:InstanceName"];
-            });
+            services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer
+                .Connect(configuration["RedisCacheSettings:ConnectionString"]));
+
         }
     }
 }

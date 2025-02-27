@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using SendGrid.Helpers.Errors.Model;
+using System.Text.Json;
 
 
 namespace HospitalSystem.Application.Exceptions
@@ -42,6 +43,7 @@ namespace HospitalSystem.Application.Exceptions
                 Errors = errors,
                 StatusCode = statusCode
             }.ToString());
+
         }
 
         private static int GetStatusCode(Exception exception) =>
@@ -49,6 +51,7 @@ namespace HospitalSystem.Application.Exceptions
             {
                 BadRequestException => StatusCodes.Status400BadRequest,
                 NotFoundException => StatusCodes.Status400BadRequest,
+                UnauthorizedAccessException => StatusCodes.Status401Unauthorized,
                 ValidationException => StatusCodes.Status422UnprocessableEntity,
                 _ => StatusCodes.Status500InternalServerError
             };

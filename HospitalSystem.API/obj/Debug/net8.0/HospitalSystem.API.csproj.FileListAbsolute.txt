@@ -358,7 +358,6 @@ C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\System.Runtime.Caching.dll
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\System.Security.Permissions.dll
-C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\System.Windows.Extensions.dll
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\af\Humanizer.resources.dll
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\ar\Humanizer.resources.dll
@@ -549,3 +548,7 @@ C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\StackExchange.Redis.dll
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\SendGrid.dll
 C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\StarkbankEcdsa.dll
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\bin\Debug\net8.0\HospitalSystem.API.staticwebassets.endpoints.json
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\obj\Debug\net8.0\staticwebassets\msbuild.HospitalSystem.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\HP\Desktop\Programs\HospitalSystem\HospitalSystem.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

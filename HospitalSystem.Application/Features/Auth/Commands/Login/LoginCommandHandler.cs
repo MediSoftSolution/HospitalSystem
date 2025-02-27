@@ -30,12 +30,16 @@ namespace HospitalSystem.Application.Features.Auth.Commands.Login
         }
         public async Task<LoginCommandResponse> Handle(LoginCommandRequest request, CancellationToken cancellationToken)
         {
-            User user = await userManager.FindByEmailAsync(request.Email);
-
-
-            bool checkPassword = await userManager.CheckPasswordAsync(user, request.Password);
-
-            await authRules.EmailOrPasswordShouldNotBeInvalid(user, checkPassword);
+            User? user = await userManager.FindByEmailAsync(request.Email);
+            if (user != null)
+            {
+                bool checkPassword = await userManager.CheckPasswordAsync(user, request.Password);
+                await authRules.EmailOrPasswordShouldNotBeInvalid(user, checkPassword);
+            }
+            else
+            {
+                await authRules.EmailOrPasswordShouldNotBeInvalid(user, false);
+            }
 
             IList<string> roles = await userManager.GetRolesAsync(user);
 

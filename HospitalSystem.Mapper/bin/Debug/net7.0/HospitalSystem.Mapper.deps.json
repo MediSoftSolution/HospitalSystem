@@ -407,7 +407,10 @@
           "System.IdentityModel.Tokens.Jwt": "8.2.0"
         },
         "runtime": {
-          "HospitalSystem.Application.dll": {}
+          "HospitalSystem.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "HospitalSystem.Domain/1.0.0": {
@@ -415,7 +418,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.0"
         },
         "runtime": {
-          "HospitalSystem.Domain.dll": {}
+          "HospitalSystem.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.DTOs
 {
-    public record WorkingTimeDto(DayOfWeek Day, string Start, string End);
+    public sealed record WorkingTimeDto(DayOfWeek Day, string Start, string End);
 }

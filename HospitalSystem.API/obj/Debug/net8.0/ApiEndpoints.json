@@ -1,0 +1,250 @@
+[
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Auth.Commands.Login.LoginCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.AuthController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/Auth/RefreshToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Auth.Commands.RefreshToken.RefreshTokenCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Auth.Commands.Register.RegisterCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.AuthController",
+    "Method": "Revoke",
+    "RelativePath": "api/Auth/Revoke",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Auth.Commands.Revoke.RevokeCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.AuthController",
+    "Method": "RevokeAll",
+    "RelativePath": "api/Auth/RevokeAll",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.DoctorController",
+    "Method": "CreateProduct",
+    "RelativePath": "api/Doctor/CreateProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Doctors.Commands.CreateDoctor.CreateDoctorCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.DoctorController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/Doctor/DeleteProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Doctors.Commands.DeleteDoctor.DeleteDoctorCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.DoctorController",
+    "Method": "GetAllDoctors",
+    "RelativePath": "api/Doctor/GetAllDoctors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.DoctorController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/Doctor/UpdateProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Doctors.Commands.UpdateDoctor.UpdateDoctorCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.OfficeController",
+    "Method": "GetAllOffices",
+    "RelativePath": "api/Office",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.OfficeController",
+    "Method": "CreateOffice",
+    "RelativePath": "api/Office",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Offices.Commands.CreateOffice.CreateOfficeCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.OfficeController",
+    "Method": "UpdateOffice",
+    "RelativePath": "api/Office",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Offices.Commands.UpdateDoctor.UpdateOfficeCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.OfficeController",
+    "Method": "DeleteOffice",
+    "RelativePath": "api/Office",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Offices.Commands.DeleteOffice.DeleteOfficeCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.SpecialtyController",
+    "Method": "GetAllSpecialities",
+    "RelativePath": "api/Specialty",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.SpecialtyController",
+    "Method": "CreateSpeciality",
+    "RelativePath": "api/Specialty",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Specialties.Commands.CreateSpeciality.CreateSpecialityCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.SpecialtyController",
+    "Method": "UpdateSpeciality",
+    "RelativePath": "api/Specialty",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Specialities.Commands.UpdateSpecialty.UpdateSpecialityCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.API.Controllers.SpecialtyController",
+    "Method": "DeleteSpeciality",
+    "RelativePath": "api/Specialty",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HospitalSystem.Application.Features.Specialties.Commands.DeleteSpeciality.DeleteSpecialityCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

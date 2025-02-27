@@ -3,6 +3,7 @@ using HospitalSystem.Application.Features.Auth.Commands.RefreshToken;
 using HospitalSystem.Application.Features.Auth.Commands.Register;
 using HospitalSystem.Application.Features.Auth.Commands.Revoke;
 using HospitalSystem.Application.Features.Auth.Commands.RevokeAll;
+using HospitalSystem.Application.Features.Auth.Commands.RevokeUserAccessToken;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -54,6 +55,15 @@ namespace HospitalSystem.API.Controllers
         public async Task<IActionResult> RevokeAll()
         {
             await _mediator.Send(new RevokeAllCommandRequest());
+            return StatusCode(StatusCodes.Status200OK);
+        }
+
+
+        // Through this, the admin can invalidate the access token of any user
+        [HttpPost]
+        public async Task<IActionResult> RevokeAccessToken(RevokeAccessTokenCommandRequest request)
+        {
+            await _mediator.Send(request);
             return StatusCode(StatusCodes.Status200OK);
         }
     }

@@ -2151,12 +2151,6 @@
       "System.Text.Json/8.0.4": {
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31311"
-          }
         }
       },
       "System.Threading.Channels/7.0.0": {},
@@ -2199,7 +2193,10 @@
           "System.IdentityModel.Tokens.Jwt": "8.2.0"
         },
         "runtime": {
-          "HospitalSystem.Application.dll": {}
+          "HospitalSystem.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "HospitalSystem.Domain/1.0.0": {
@@ -2207,7 +2204,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.0"
         },
         "runtime": {
-          "HospitalSystem.Domain.dll": {}
+          "HospitalSystem.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "HospitalSystem.Infrastructure/1.0.0": {
@@ -2221,7 +2221,10 @@
           "StackExchange.Redis": "2.8.16"
         },
         "runtime": {
-          "HospitalSystem.Infrastructure.dll": {}
+          "HospitalSystem.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "HospitalSystem.Mapper/1.0.0": {
@@ -2230,7 +2233,10 @@
           "HospitalSystem.Application": "1.0.0"
         },
         "runtime": {
-          "HospitalSystem.Mapper.dll": {}
+          "HospitalSystem.Mapper.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "HospitalSystem.Persistence/1.0.0": {
@@ -2242,7 +2248,10 @@
           "Microsoft.Extensions.Configuration.Json": "8.0.1"
         },
         "runtime": {
-          "HospitalSystem.Persistence.dll": {}
+          "HospitalSystem.Persistence.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "h2o6bia/dIs=",
+  "dgSpecHash": "3AWPjPPDRJg=",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\Desktop\\Programs\\HospitalSystem\\HospitalSystem.IntegrationTests\\HospitalSystem.IntegrationTests.csproj",
   "expectedPackageFiles": [
@@ -177,7 +177,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "HospitalSystem.IntegrationTests depends on Microsoft.NET.Test.Sdk (>= 17.10.1) but Microsoft.NET.Test.Sdk 17.10.1 was not found. An approximate best match of Microsoft.NET.Test.Sdk 17.11.0 was resolved.",
+      "message": "HospitalSystem.IntegrationTests depends on Microsoft.NET.Test.Sdk (>= 17.10.1) but Microsoft.NET.Test.Sdk 17.10.1 was not found. Microsoft.NET.Test.Sdk 17.11.0 was resolved instead.",
       "libraryId": "Microsoft.NET.Test.Sdk",
       "targetGraphs": [
         "net8.0"

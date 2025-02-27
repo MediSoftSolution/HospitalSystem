@@ -9183,7 +9183,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -9234,7 +9235,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -9243,7 +9244,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "HospitalSystem.IntegrationTests depends on Microsoft.NET.Test.Sdk (>= 17.10.1) but Microsoft.NET.Test.Sdk 17.10.1 was not found. An approximate best match of Microsoft.NET.Test.Sdk 17.11.0 was resolved.",
+      "message": "HospitalSystem.IntegrationTests depends on Microsoft.NET.Test.Sdk (>= 17.10.1) but Microsoft.NET.Test.Sdk 17.10.1 was not found. Microsoft.NET.Test.Sdk 17.11.0 was resolved instead.",
       "libraryId": "Microsoft.NET.Test.Sdk",
       "targetGraphs": [
         "net8.0"
