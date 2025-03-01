@@ -3,14 +3,14 @@
 🚧 **This project is still under development, and new features are continuously being added.** 🚧
 
 ## 📖 Table of Contents
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [User Flow](#user-flow)
-- [Technologies Used](#technologies-used)
-- [Development Status](#development-status)
-- [Installation and Running](#installation-and-running)
-- [CQRS and MediatR Usage](#cqrs-and-mediatr-usage)
-
+- [📘 About the Project](#about-the-project)
+- [✨ Features](#features)
+- [🔄 User Flow](#user-flow)
+- [🛠 Technologies Used](#technologies-used)
+- [🚧 Development Status](#development-status)
+- [⚙️ Installation and Running](#installation-and-running)
+- [🧩 CQRS and MediatR Usage](#cqrs-and-mediatr-usage)
+  
 ---
 
 ## 📌 About the Project
