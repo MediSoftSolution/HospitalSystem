@@ -14,7 +14,7 @@ public class TokenBlacklistMiddleware
 
     public async Task Invoke(HttpContext context)
     {
-        string token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+        string? token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
         if (!string.IsNullOrEmpty(token) && await _tokenBlacklistService.IsTokenRevoked(token))
         {

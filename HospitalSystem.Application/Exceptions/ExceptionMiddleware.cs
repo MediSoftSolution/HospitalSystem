@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using SendGrid.Helpers.Errors.Model;
+using Serilog.Core;
 using System.Text.Json;
 
 
@@ -8,6 +10,13 @@ namespace HospitalSystem.Application.Exceptions
 {
     public class ExceptionMiddleware : IMiddleware
     {
+        private readonly ILogger<ExceptionMiddleware> _logger;
+
+        public ExceptionMiddleware(ILogger<ExceptionMiddleware> logger)
+        {
+            _logger = logger;
+        }
+
         public async Task InvokeAsync(HttpContext httpContext, RequestDelegate next)
         {
             try
@@ -16,6 +25,7 @@ namespace HospitalSystem.Application.Exceptions
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "An exception occurred: {Message}", ex.Message);
                 await HandleExceptionAsync(httpContext, ex);
             }
         }

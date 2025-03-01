@@ -5,6 +5,7 @@ using HospitalSystem.Mapper;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using HospitalSystem.Application.Exceptions;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +21,7 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
-builder.Services.AddApplication();
+builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddCustomMapper();
 
 builder.Services.AddSwaggerGen(c =>
@@ -59,6 +60,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
+builder.Host.UseSerilog();
+
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionMiddleware>();
@@ -70,9 +73,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
 app.UseHttpsRedirection();
 
 app.MapControllers();
+
+app.UseSerilogRequestLogging();
 
 app.Run();

@@ -9,5 +9,6 @@ namespace HospitalSystem.Application.Features.Appointment.Commands.CreateAppoint
 {
     public sealed class CreateAppointmentCommandRequest : IRequest<Unit>
     {
+
     }
 }

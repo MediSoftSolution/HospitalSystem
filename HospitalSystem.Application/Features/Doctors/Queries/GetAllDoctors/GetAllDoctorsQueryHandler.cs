@@ -18,11 +18,14 @@ namespace HospitalSystem.Application.Features.Doctors.Queries.GetAllDoctors
         }
         public async Task<IList<GetAllDoctorsQueryResponse>> Handle(GetAllDoctorsQueryRequest request, CancellationToken cancellationToken)
         {
+            throw new Exception();
             var doctors = await unitOfWork
                            .GetReadRepository<Doctor>()
                            .GetAllAsync(include: x => x.Include(d => d.Specialty).Include(d => d.Photo));
 
             var doctorDtos = mapper.Map<IList<GetAllDoctorsQueryResponse>>(doctors);
+
+            
 
             return doctorDtos;
         }

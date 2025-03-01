@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Beheviors
 {
-    public class FluentValidationBehevior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-        where TRequest : IRequest<TResponse>
+    public class FluentValidationBehevior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {
         private readonly IEnumerable<IValidator<TRequest>> validator;
 

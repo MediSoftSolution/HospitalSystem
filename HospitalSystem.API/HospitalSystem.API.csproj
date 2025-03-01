@@ -20,4 +20,8 @@
       <ProjectReference Include="..\HospitalSystem.Persistence\HospitalSystem.Persistence.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="logs\" />
+    </ItemGroup>
+
 </Project>
