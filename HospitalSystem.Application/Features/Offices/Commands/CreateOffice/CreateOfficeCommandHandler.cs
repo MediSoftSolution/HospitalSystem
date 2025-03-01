@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using HospitalSystem.Application.Bases;
-using HospitalSystem.Application.Features.Doctors.Commands.CreateDoctor;
 using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;

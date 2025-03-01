@@ -21,27 +21,50 @@ namespace HospitalSystem.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllDoctors()
         {
-            var response = await _mediator.Send(new GetAllDoctorsQueryRequest());
+            var doctors = await _mediator.Send(new GetAllDoctorsQueryRequest());
 
-            return Ok(response);
+            if (doctors == null || doctors.Count == 0)
+            {
+                return NotFound("No doctors found.");
+            }
+
+            return Ok(doctors);
         }
         [HttpPost]
-        public async Task<IActionResult> CreateProduct(CreateDoctorCommandRequest request)
+        public async Task<IActionResult> CreateDoctor(CreateDoctorCommandRequest request)
         {
-            await _mediator.Send(request);
-            return Ok();
+            var result = await _mediator.Send(request);
+
+            if (result.Equals(Unit.Value))
+            {
+                return Ok();
+            }
+
+            return BadRequest("Failed to create doctor.");
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateProduct(UpdateDoctorCommandRequest request)
+        public async Task<IActionResult> UpdateDoctor(UpdateDoctorCommandRequest request)
         {
-            await _mediator.Send(request);
-            return Ok();
+            var result = await _mediator.Send(request); 
+
+            if (result.Equals(Unit.Value)) 
+            {
+                return Ok();
+            }
+
+            return NotFound("Doctor not found.");
         }
         [HttpPost]
-        public async Task<IActionResult> DeleteProduct(DeleteDoctorCommandRequest request)
+        public async Task<IActionResult> DeleteDoctor(DeleteDoctorCommandRequest request)
         {
-            await _mediator.Send(request);
-            return Ok();
+            var result = await _mediator.Send(request);
+
+            if (result.Equals(Unit.Value))
+            {
+                return NoContent(); 
+            }
+
+            return NotFound("Doctor not found.");
         }
     }
 }
