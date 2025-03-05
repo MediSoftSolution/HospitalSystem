@@ -3,6 +3,7 @@ using HospitalSystem.Application.Interfaces.RedisCache;
 using HospitalSystem.Application.Interfaces.Tokens;
 using HospitalSystem.Infrastructure.Emails;
 using HospitalSystem.Infrastructure.RedisCache;
+using HospitalSystem.Infrastructure.ServiceDiscovery;
 using HospitalSystem.Infrastructure.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -50,6 +51,8 @@ namespace HospitalSystem.Infrastructure
 
             services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer
                 .Connect(configuration["RedisCacheSettings:ConnectionString"]));
+
+            services.ConfigureConsul(configuration);
 
         }
     }

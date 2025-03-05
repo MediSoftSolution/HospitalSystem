@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using HospitalSystem.Application.Exceptions;
 using Serilog;
+using HospitalSystem.Infrastructure.ServiceDiscovery;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,17 @@ builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddCustomMapper();
+
+var corsPolicy = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(corsPolicy,
+        builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
+
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -59,10 +71,11 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-
 builder.Host.UseSerilog();
 
 var app = builder.Build();
+
+app.UseCors(corsPolicy);
 
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseMiddleware<TokenBlacklistMiddleware>();
@@ -78,5 +91,7 @@ app.UseHttpsRedirection();
 app.MapControllers();
 
 app.UseSerilogRequestLogging();
+
+app.RegisterWithConsul(app.Lifetime);
 
 app.Run();

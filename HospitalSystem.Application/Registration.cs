@@ -26,8 +26,8 @@ public static class Registration
         services.AddValidatorsFromAssembly(assembly);
         ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("en");
 
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+        //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
+        //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
 
         Log.Logger = new LoggerConfiguration()
             .ReadFrom.Configuration(configuration)
