@@ -1,75 +1,74 @@
-# Hospital System
+# Hospital Platform API
 
-This project is a part of a hospital platform web application that includes ASP.NET Core MVC and ASP.NET Core API. The platform provides a comprehensive system for managing hospital operations, user interactions, doctor panels, and administrative functionalities. 
+🚧 **This project is still under development, and new features are continuously being added.** 🚧
 
-🚧 **The project is currently under development, and new features and improvements are being added continuously.** 🚧
-
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Key Functionalities](#key-functionalities)
-- [User Workflow](#user-workflow)
-- [Role-Based Pages](#role-based-pages)
-- [Technologies Used](#technologies-used)
-- [Development Status](#development-status)
-- [Setup and Installation](#setup-and-installation)
+## 📖 Table of Contents
+- [📘 About the Project](#-about-the-project)
+- [✨ Features](#-features)
+- [🔄 User Flow](#-user-flow)
+- [🛠 Technologies Used](#-technologies-used)
+- [🚧 Development Status](#-development-status)
+- [⚙️ Installation and Running](#-installation-and-running)
+- [🧩 CQRS and MediatR Usage](#-cqrs-and-mediatr-usage)
   
-## Project Overview
+---
 
-The Hospital System is a comprehensive web application designed to manage hospital operations. The platform is built using ASP.NET Core MVC and ASP.NET Core API, aiming to provide a seamless user experience for patients, doctors, and administrators.
+## 📌 About the Project
 
-The project consists of three main components:
+The **Hospital Platform API** is a comprehensive web application designed to manage hospital operations. Built using **ASP.NET Core MVC** and **ASP.NET Core API**, it aims to provide a seamless experience for patients, doctors, and administrators.
 
-- **Client Web Page**: The front-facing website for patients to manage appointments and view lab results.
-- **Doctor Panel**: An interface tailored for doctors to view patient information and manage appointments and lab results.
-- **Admin Panel**: A backend interface for administrators to oversee hospital operations and manage roles.
+### 🚀 Project Components
+- **Patient Panel**: For booking appointments, viewing lab results, and accessing special offers.
+- **Doctor Panel**: Allows doctors to view patient information and manage appointments.
+- **Admin Panel**: Provides hospital administrators with user and operation management tools.
 
-**Note:** The project is currently under development, with ongoing additions of features and improvements.
+## 🔥 Features
+- **User Registration**: OTP verification for registration, password reset, and forgot password handling.
+- **Appointment System**: Enables users to book appointments with doctors directly.
+- **Laboratory Results**: Patients can view their test results online or via email.
+- **Birthday Special Offers**: Discounts and gifts for users on their birthdays.
+- **Scenario-Based Medical Processes**: Integrated medical procedures like examination, lab tests, and treatment planning.
+- **Global Exception Handling**: API errors are managed and logged.
+- **Serilog Logging**: Detailed event and error logging.
+- **Admin Access Token Management**: Admin users can disable specific user access tokens.
 
-## Key Functionalities
+## 📌 User Flow
+1. User visits the hospital website.
+2. If not registered, they create an account; if registered, they log in.
+3. User books an appointment with a doctor.
+4. Doctor reviews the patient's information and initiates an examination.
+5. Necessary tests are created in the system.
+6. Laboratory technicians conduct tests and upload results.
+7. User can view test results online or receive them via email.
 
-- **User Registration**: Allows users to register with OTP verification and includes functionalities for password reset and forgot password.
-- **Appointment Booking**: Users can book appointments with doctors directly through the platform.
-- **View Lab Results**: Patients can access their lab results online and receive results via email.
-- **Special Offers on Birthdays**: Registered users receive discounts and gifts on their birthdays.
-- **Scenario-Based Medical Processes**: All medical operations, including examinations, lab tests, and treatment planning, are integrated into the system.
+## 🛠 Technologies Used
+- **ASP.NET Core API** – For building the web and API components.
+- **SQL Server** – For database management.
+- **FluentValidation** – For input data validation.
+- **Unit of Work Pattern** – Ensures data integrity during database operations.
+- **Serilog** – For logging system events.
+- **Docker & Redis** – For caching and performance improvements.
 
-## User Workflow
+## 🧩 **CQRS and MediatR Usage**
 
-1. The user visits the hospital or accesses the website.
-2. If unregistered, the user creates an account; otherwise, they can directly book an appointment with a doctor.
-3. The doctor reviews the user’s information on the system and calls the user for an examination.
-4. After the examination, necessary lab tests are booked via the system.
-5. Lab technicians view the user’s information, conduct the tests, and record the results in the system.
-6. Users can view their results online or receive them via email.
+This project follows **CQRS** (Command Query Responsibility Segregation) to separate read and write operations, providing a more maintainable and scalable structure.
 
-## Role-Based Pages
+- **Commands**: Handle write operations (e.g., creating or updating data).
+- **Queries**: Handle read operations (e.g., retrieving data).
 
-- **AppUser**: Access to home, doctors, departments, laboratory (analysis info and results), and branches.
-- **Doctor**: Access to patients and laboratory pages.
-- **Admin**: Access to the admin panel.
+### **MediatR Integration**
+MediatR is used to decouple the request (Command/Query) from its handler, making the system more modular and easier to maintain.
 
-## Technologies Used
+## 🚧 Development Status
+The project is under active development, with new features being added continuously. Some features may be incomplete or under construction.
 
-- **ASP.NET Core MVC and API**: Framework for creating the application’s web and API layers.
-- **SQL Server**: Database solution for storing all relevant data.
-- **FluentValidation**: Validation framework used for ensuring data integrity and user input validation.
-- **Unit of Work Pattern**: Employed to manage database transactions effectively and maintain data consistency.
+## ⚙️ Installation and Running
+### 📌 Requirements
+- **.NET SDK**
+- **SQL Server**
+- **IDE** (e.g., Visual Studio or Rider)
 
-## Development Status
-
-The Hospital Platform API is currently in the development phase. Features are being actively implemented, and continuous improvements are underway. The project may contain incomplete functionalities or bugs, with future updates planned for enhancements and fixes.
-
-## Setup and Installation
-
-### Prerequisites
-
-- .NET SDK
-- SQL Server
-- An IDE that supports .NET Core (e.g., Visual Studio)
-
-### Steps to Run the Application
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/Abulfazfa/HospitalPlatformAPI.git
+### 📌 Steps
+1. **Clone the repository:**
+```sh
+git clone https://github.com/Abulfazfa/HospitalPlatformAPI.git
