@@ -1,7 +1,5 @@
 # Hospital Platform API
 
-🚧 **This project is still under development, and new features are continuously being added.** 🚧
-
 ## 📖 Table of Contents
 - [📘 About the Project](#-about-the-project)
 - [✨ Features](#-features)
