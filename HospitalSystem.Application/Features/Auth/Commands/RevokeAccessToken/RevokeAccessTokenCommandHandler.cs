@@ -1,5 +1,5 @@
-﻿using HospitalSystem.Application.Bases;
-using HospitalSystem.Application.Interfaces.AutoMapper;
+﻿using AutoMapper;
+using HospitalSystem.Application.Bases;
 using HospitalSystem.Application.Interfaces.Tokens;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using MediatR;
@@ -13,7 +13,7 @@ namespace HospitalSystem.Application.Features.Auth.Commands.RevokeUserAccessToke
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public RevokeAccessTokenCommandHandler(
-            IMyMapper mapper,
+            IMapper mapper,
             IUnitOfWork unitOfWork,
             IHttpContextAccessor httpContextAccessor,
             ITokenBlacklistService tokenBlacklistService)

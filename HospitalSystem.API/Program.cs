@@ -78,7 +78,7 @@ var app = builder.Build();
 app.UseCors(corsPolicy);
 
 app.UseMiddleware<ExceptionMiddleware>();
-app.UseMiddleware<TokenBlacklistMiddleware>();
+//app.UseMiddleware<TokenBlacklistMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {

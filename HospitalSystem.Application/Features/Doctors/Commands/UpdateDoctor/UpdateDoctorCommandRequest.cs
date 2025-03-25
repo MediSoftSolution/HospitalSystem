@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HospitalSystem.Domain.Entities;
+using HospitalSystem.Application.DTOs;
 
 namespace HospitalSystem.Application.Features.Doctors.Commands.UpdateDoctor
 { 
@@ -13,7 +14,9 @@ namespace HospitalSystem.Application.Features.Doctors.Commands.UpdateDoctor
         public int Id { get; set; }
         public Guid UserId { get; set; }
         public string? About { get; set; }
-        public Dictionary<DayOfWeek, WorkingTime> WorkingTimes { get; set; }
+
+        public Dictionary<DayOfWeek, WorkingTimeDto> WorkingTimes { get; set; }
+
         public decimal ConsultingFee { get; set; }
         public int PhotoId { get; set; }
         public int? SpecialtyId { get; set; }

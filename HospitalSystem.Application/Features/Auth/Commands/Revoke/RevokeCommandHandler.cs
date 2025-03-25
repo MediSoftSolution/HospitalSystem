@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using HospitalSystem.Application.Bases;
 using HospitalSystem.Application.Features.Auth.Rules;
-using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
@@ -15,7 +14,7 @@ namespace HospitalSystem.Application.Features.Auth.Commands.Revoke
         private readonly UserManager<User> userManager;
         private readonly AuthRules authRules;
 
-        public RevokeCommandHandler(UserManager<User> userManager, AuthRules authRules, IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public RevokeCommandHandler(UserManager<User> userManager, AuthRules authRules, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
             this.userManager = userManager;
             this.authRules = authRules;

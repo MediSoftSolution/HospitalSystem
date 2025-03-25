@@ -1,5 +1,5 @@
-﻿using HospitalSystem.Application.Bases;
-using HospitalSystem.Application.Interfaces.AutoMapper;
+﻿using AutoMapper;
+using HospitalSystem.Application.Bases;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
@@ -9,7 +9,7 @@ namespace HospitalSystem.Application.Features.Specialties.Commands.CreateSpecial
 {
     public class CreateSpecialityCommandHandler : BaseHandler, IRequestHandler<CreateSpecialityCommandRequest, Unit>
     {
-        public CreateSpecialityCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public CreateSpecialityCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 
@@ -17,7 +17,7 @@ namespace HospitalSystem.Application.Features.Specialties.Commands.CreateSpecial
         {
           
 
-            Specialty specialty = mapper.Map<Specialty, CreateSpecialityCommandRequest>(request);
+            Specialty specialty = mapper.Map<Specialty>(request);
 
             await unitOfWork.GetWriteRepository<Specialty>().AddAsync(specialty);
 

@@ -1,20 +1,15 @@
 ﻿using HospitalSystem.Application.Bases;
-using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HospitalSystem.Domain.Entities;
+using AutoMapper;
 
 namespace HospitalSystem.Application.Features.Doctors.Commands.DeleteDoctor
 {
     public class DeleteDoctorCommandHandler : BaseHandler, IRequestHandler<DeleteDoctorCommandRequest, Unit>
     {
-        public DeleteDoctorCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public DeleteDoctorCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 

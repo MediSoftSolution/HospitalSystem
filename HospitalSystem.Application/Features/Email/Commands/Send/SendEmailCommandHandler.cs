@@ -1,6 +1,6 @@
-﻿using HospitalSystem.Application.Bases;
+﻿using AutoMapper;
+using HospitalSystem.Application.Bases;
 using HospitalSystem.Application.Features.Email.Commands.Send;
-using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.Emails;
 using HospitalSystem.Application.Interfaces.RedisCache;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
@@ -14,7 +14,7 @@ public class SendEmailCommandHandler : BaseHandler, IRequestHandler<SendEmailCom
     private readonly IRedisCacheService _redisService;
 
     public SendEmailCommandHandler(
-        IMyMapper mapper,
+        IMapper mapper,
         IUnitOfWork unitOfWork,
         IHttpContextAccessor httpContextAccessor,
         IEmailService emailService,

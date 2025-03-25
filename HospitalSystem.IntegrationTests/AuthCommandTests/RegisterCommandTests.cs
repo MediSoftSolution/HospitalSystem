@@ -1,14 +1,7 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using HospitalSystem.Application.Features.Auth.Commands.Register;
-using HospitalSystem.Application.Features.Auth.Rules;
-using HospitalSystem.Application.Interfaces.AutoMapper;
-using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Moq;
 using Xunit;

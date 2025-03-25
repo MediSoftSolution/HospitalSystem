@@ -1,17 +1,11 @@
 ﻿using AutoMapper;
 using HospitalSystem.Application.Bases;
 using HospitalSystem.Application.Features.Auth.Rules;
-using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Features.Auth.Commands.Register
 {
@@ -21,7 +15,7 @@ namespace HospitalSystem.Application.Features.Auth.Commands.Register
         private readonly UserManager<User> userManager;
         private readonly RoleManager<Role> roleManager;
 
-        public RegisterCommandHandler(AuthRules authRules, UserManager<User> userManager, RoleManager<Role> roleManager, IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public RegisterCommandHandler(AuthRules authRules, UserManager<User> userManager, RoleManager<Role> roleManager, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
             this.authRules = authRules;
             this.userManager = userManager;
@@ -31,7 +25,7 @@ namespace HospitalSystem.Application.Features.Auth.Commands.Register
         {
             await authRules.UserShouldNotBeExist(await userManager.FindByEmailAsync(request.Email));
 
-            User user = mapper.Map<User, RegisterCommandRequest>(request);
+            User user = mapper.Map<User>(request);
             user.UserName = request.Email;
             user.SecurityStamp = Guid.NewGuid().ToString();
 

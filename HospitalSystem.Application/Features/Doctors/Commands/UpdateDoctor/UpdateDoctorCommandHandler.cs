@@ -1,5 +1,4 @@
 ﻿using HospitalSystem.Application.Bases;
-using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -9,31 +8,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HospitalSystem.Domain.Entities;
+using AutoMapper;
 
 namespace HospitalSystem.Application.Features.Doctors.Commands.UpdateDoctor
 {
     public class UpdateDoctorCommandHandler : BaseHandler, IRequestHandler<UpdateDoctorCommandRequest, Unit>
     {
-        public UpdateDoctorCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public UpdateDoctorCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 
         public async Task<Unit> Handle(UpdateDoctorCommandRequest request, CancellationToken cancellationToken)
         {
-            var product = await unitOfWork.GetReadRepository<Doctor>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
+            var doctor = await unitOfWork.GetReadRepository<Doctor>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
 
-            var map = mapper.Map<Doctor, UpdateDoctorCommandRequest>(request);
+            if (doctor == null)
+                throw new Exception("Doctor not found!");
 
-            var doctorSpeciality = await unitOfWork.GetReadRepository<Specialty>()
-                .GetAsync(x => x.Id == product.Id);
+            mapper.Map(request, doctor);
 
-            await unitOfWork.GetWriteRepository<Specialty>()
-                .HardDeleteAsync(doctorSpeciality);
+            if (request.WorkingTimes != null && request.WorkingTimes.Any())
+            {
+                doctor.WorkingTimes = request.WorkingTimes
+                    .Select(wt => new WorkingTime
+                    {
+                        Day = wt.Key,
+                        Start = TimeSpan.Parse(wt.Value.Start),
+                        End = TimeSpan.Parse(wt.Value.End)
+                    }).ToList();
+            }
 
-            await unitOfWork.GetWriteRepository<Doctor>().UpdateAsync(map);
+            await unitOfWork.GetWriteRepository<Doctor>().UpdateAsync(doctor);
             await unitOfWork.SaveAsync();
 
             return Unit.Value;
         }
+
     }
 }

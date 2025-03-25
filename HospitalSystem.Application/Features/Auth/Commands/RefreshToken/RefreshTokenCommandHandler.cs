@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using HospitalSystem.Application.Bases;
 using HospitalSystem.Application.Features.Auth.Rules;
-using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.Tokens;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
@@ -23,7 +22,7 @@ namespace HospitalSystem.Application.Features.Auth.Commands.RefreshToken
         private readonly AuthRules authRules;
         private readonly UserManager<User> userManager;
         private readonly ITokenService tokenService;
-        public RefreshTokenCommandHandler(IMyMapper mapper, AuthRules authRules, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, UserManager<User> userManager, ITokenService tokenService) : base(mapper, unitOfWork, httpContextAccessor)
+        public RefreshTokenCommandHandler(IMapper mapper, AuthRules authRules, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, UserManager<User> userManager, ITokenService tokenService) : base(mapper, unitOfWork, httpContextAccessor)
         {
             this.authRules = authRules;
             this.userManager = userManager;

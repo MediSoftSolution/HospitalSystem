@@ -1,4 +1,4 @@
-﻿using HospitalSystem.Application.Interfaces.AutoMapper;
+﻿using AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
@@ -9,9 +9,9 @@ namespace HospitalSystem.Application.Features.Specialties.Queries.GetAllSpeciali
     public class GetAllSpecialitiesQueryHandler : IRequestHandler<GetAllSpecialitiesQueryRequest, IList<GetAllSpecialitiesQueryResponse>>
     {
         private readonly IUnitOfWork unitOfWork;
-        private readonly IMyMapper mapper;
+        private readonly IMapper mapper;
 
-        public GetAllSpecialitiesQueryHandler(IUnitOfWork unitOfWork, IMyMapper mapper)
+        public GetAllSpecialitiesQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
@@ -22,7 +22,7 @@ namespace HospitalSystem.Application.Features.Specialties.Queries.GetAllSpeciali
                            .GetReadRepository<Specialty>()
                            .GetAllAsync(include: x => x.Include(d => d.Doctors).Include(d => d.Photo));
 
-            var specialityDtos = mapper.Map<IList<GetAllSpecialitiesQueryResponse>>(specialities);
+            var specialityDtos = mapper.Map<List<GetAllSpecialitiesQueryResponse>>(specialities);
 
             return specialityDtos;
         }

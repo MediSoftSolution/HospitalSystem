@@ -1,7 +1,6 @@
 using HospitalSystem.Application.Features.Auth.Commands.Login;
 using HospitalSystem.Application.Features.Auth.Exceptions;
 using HospitalSystem.Application.Features.Auth.Rules;
-using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.Tokens;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;

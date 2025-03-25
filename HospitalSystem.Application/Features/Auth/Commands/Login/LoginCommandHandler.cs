@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using HospitalSystem.Application.Bases;
 using HospitalSystem.Application.Features.Auth.Rules;
-using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.Tokens;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
@@ -21,7 +20,7 @@ namespace HospitalSystem.Application.Features.Auth.Commands.Login
         private readonly ITokenService tokenService;
         private readonly AuthRules authRules;
 
-        public LoginCommandHandler(UserManager<User> userManager, IConfiguration configuration, ITokenService tokenService, AuthRules authRules, IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public LoginCommandHandler(UserManager<User> userManager, IConfiguration configuration, ITokenService tokenService, AuthRules authRules, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
             this.userManager = userManager;
             this.configuration = configuration;

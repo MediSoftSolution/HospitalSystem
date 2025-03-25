@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
@@ -10,9 +9,9 @@ namespace HospitalSystem.Application.Features.Offices.Queries.GetAllOffices
     public class GetAllOfficesQueryHandler : IRequestHandler<GetAllOfficesQueryRequest, IList<GetAllOfficesQueryResponse>>
     {
         private readonly IUnitOfWork unitOfWork;
-        private readonly IMyMapper _mapper;
+        private readonly IMapper _mapper;
 
-        public GetAllOfficesQueryHandler(IUnitOfWork unitOfWork, IMyMapper mapper)
+        public GetAllOfficesQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
             _mapper = mapper;

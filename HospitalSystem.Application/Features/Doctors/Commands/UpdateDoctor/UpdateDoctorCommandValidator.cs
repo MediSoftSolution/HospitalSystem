@@ -28,14 +28,8 @@ namespace HospitalSystem.Application.Features.Doctors.Commands.UpdateDoctor
                 .GreaterThan(0).When(x => x.OfficeId.HasValue).WithMessage("OfficeId must be greater than zero.");
 
             RuleFor(x => x.WorkingTimes)
-                .NotEmpty().WithMessage("WorkingTimes must be provided.")
-                .Must(ContainValidWorkingTimes).WithMessage("WorkingTimes must contain valid entries.");
+                .NotEmpty().WithMessage("WorkingTimes must be provided.");        
         }
-        private bool ContainValidWorkingTimes(Dictionary<DayOfWeek, WorkingTime> workingTimes)
-        {
-            // Custom validation logic to ensure that the working times dictionary contains valid data.
-            // Example: Check that each DayOfWeek has valid WorkingTime values.
-            return workingTimes != null && workingTimes.All(kv => kv.Value != null);
-        }
+       
     }
 }

@@ -1,6 +1,5 @@
-﻿using HospitalSystem.Application.Bases;
-using HospitalSystem.Application.Features.Doctors.Rules;
-using HospitalSystem.Application.Interfaces.AutoMapper;
+﻿using AutoMapper;
+using HospitalSystem.Application.Bases;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
@@ -10,16 +9,18 @@ namespace HospitalSystem.Application.Features.Doctors.Commands.CreateDoctor
 {
     public class CreateDoctorCommandHandler : BaseHandler, IRequestHandler<CreateDoctorCommandRequest, Unit>
     {
-        public CreateDoctorCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        private readonly IMapper _mapper;
+        public CreateDoctorCommandHandler(IMapper myMapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IMapper mapper) : base(myMapper, unitOfWork, httpContextAccessor)
         {
+            _mapper = mapper;
         }
 
         public async Task<Unit> Handle(CreateDoctorCommandRequest request, CancellationToken cancellationToken)
         {
-
-            Doctor doctor = mapper.Map<Doctor, CreateDoctorCommandRequest>(request);
+            Doctor doctor = _mapper.Map<Doctor>(request);
 
             await unitOfWork.GetWriteRepository<Doctor>().AddAsync(doctor);
+            await unitOfWork.SaveAsync();
 
             return Unit.Value;
         }

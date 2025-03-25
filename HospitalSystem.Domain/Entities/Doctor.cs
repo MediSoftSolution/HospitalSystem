@@ -9,7 +9,7 @@ public class Doctor : EntityBase
     public User User { get; set; }
 
     public string? About { get; set; }
-    public ICollection<WorkingTime> WorkingTimes { get; set; }
+    public List<WorkingTime> WorkingTimes { get; set; }
 
     public decimal ConsultingFee { get; set; }
 
@@ -30,6 +30,6 @@ public class Doctor : EntityBase
     public Doctor()
     {
         Appointments = new HashSet<Appointment>();
-        WorkingTimes = new HashSet<WorkingTime>();  
+        WorkingTimes = new List<WorkingTime>();  
     }
 }

@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using HospitalSystem.Application.Bases;
+using HospitalSystem.Application.Features.Auth.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using SendGrid.Helpers.Errors.Model;
@@ -57,13 +59,19 @@ namespace HospitalSystem.Application.Exceptions
         }
 
         private static int GetStatusCode(Exception exception) =>
-            exception switch
-            {
-                BadRequestException => StatusCodes.Status400BadRequest,
-                NotFoundException => StatusCodes.Status400BadRequest,
-                UnauthorizedAccessException => StatusCodes.Status401Unauthorized,
-                ValidationException => StatusCodes.Status422UnprocessableEntity,
-                _ => StatusCodes.Status500InternalServerError
-            };
+        exception switch
+        {
+            BadRequestException => StatusCodes.Status400BadRequest,
+            NotFoundException => StatusCodes.Status404NotFound,
+            UnauthorizedAccessException => StatusCodes.Status401Unauthorized,
+            ValidationException => StatusCodes.Status422UnprocessableEntity,
+
+            EmailOrPasswordShouldNotBeInvalidException => StatusCodes.Status401Unauthorized,
+
+            BaseException => StatusCodes.Status400BadRequest,
+
+            _ => StatusCodes.Status500InternalServerError
+        };
+
     }
 }

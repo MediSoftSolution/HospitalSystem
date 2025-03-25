@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using HospitalSystem.Application.Bases;
-using HospitalSystem.Application.Interfaces.AutoMapper;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
@@ -18,7 +17,7 @@ namespace HospitalSystem.Application.Features.Auth.Commands.RevokeAll
     public class RevokeAllCommandHandler : BaseHandler, IRequestHandler<RevokeAllCommandRequest, Unit>
     {
         private readonly UserManager<User> _userManager;
-        public RevokeAllCommandHandler(IMyMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, UserManager<User> userManager) : base(mapper, unitOfWork, httpContextAccessor)
+        public RevokeAllCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, UserManager<User> userManager) : base(mapper, unitOfWork, httpContextAccessor)
         {
             _userManager = userManager;
         }
