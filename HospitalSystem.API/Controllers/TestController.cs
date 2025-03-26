@@ -1,6 +1,6 @@
 ﻿using HospitalSystem.Application.Features.Tests.Commands.CreateTest;
-using HospitalSystem.Application.Features.Tests.Commands.UpdateTest;
 using HospitalSystem.Application.Features.Tests.Commands.DeleteTest;
+using HospitalSystem.Application.Features.Tests.Commands.UpdateTest;
 using HospitalSystem.Application.Features.Tests.Queries.GetTestById;
 using HospitalSystem.Application.Features.Tests.Queries.GetTestsByPatient;
 using MediatR;
@@ -23,9 +23,9 @@ namespace HospitalSystem.API.Controllers
         [HttpGet("patient/{patientId}")]
         [ProducesResponseType(typeof(List<GetTestsByPatientQueryResponse>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> GetTestsByPatient(Guid patientId)
+        public async Task<IActionResult> GetTestsByPatient(string patientName)
         {
-            var tests = await _mediator.Send(new GetTestsByPatientQueryRequest(patientId));
+            var tests = await _mediator.Send(new GetTestsByPatientQueryRequest(patientName));
 
             if (tests == null || tests.Count == 0)
                 return NotFound("No tests found for this patient.");
@@ -36,7 +36,7 @@ namespace HospitalSystem.API.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(GetTestByIdQueryResponse), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> GetTestById(Guid id)
+        public async Task<IActionResult> GetTestById(int id)
         {
             var test = await _mediator.Send(new GetTestByIdQueryRequest(id));
 
@@ -56,14 +56,14 @@ namespace HospitalSystem.API.Controllers
 
             var result = await _mediator.Send(request);
 
-            return CreatedAtAction(nameof(GetTestById), new { id = result.Id }, result);
+            return CreatedAtAction(nameof(GetTestById), new { id = result.TestId }, result);
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(UpdateTestCommandResponse), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> UpdateTest(Guid id, [FromBody] UpdateTestCommandRequest request)
+        public async Task<IActionResult> UpdateTest(int id, [FromBody] UpdateTestCommandRequest request)
         {
             if (request == null || request.Id != id)
                 return BadRequest("Invalid update request.");
@@ -79,12 +79,9 @@ namespace HospitalSystem.API.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> DeleteTest(Guid id)
+        public async Task<IActionResult> DeleteTest(int id)
         {
             var result = await _mediator.Send(new DeleteTestCommandRequest(id));
-
-            if (!result.Success)
-                return NotFound(result.Message);
 
             return NoContent();
         }

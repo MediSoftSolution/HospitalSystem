@@ -1,15 +1,9 @@
 ﻿using AutoMapper;
 using HospitalSystem.Application.Bases;
-using HospitalSystem.Application.Features.Tests.Commands.CreateTest;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Features.Tests.Commands.CreateTest
 {
@@ -21,20 +15,28 @@ namespace HospitalSystem.Application.Features.Tests.Commands.CreateTest
 
         public async Task<CreateTestCommandResponse> Handle(CreateTestCommandRequest request, CancellationToken cancellationToken)
         {
-            Test test = new Test
+            var testTemplate = await unitOfWork.GetReadRepository<Test>().GetAsync(x => x.TestName == request.TestName);
+            if (testTemplate == null)
+                return new CreateTestCommandResponse(0, "Test template not found.");
+
+            var patientTest = new Test
             {
-                TestName = request.TestName,
-                TestPrice = request.TestPrice,
+                UserName = request.UserName,
                 RefDoctor = request.RefDoctor,
+                TestName = request.TestName,
                 IsReady = false,
-                UserName = request.UserName
+                TestResult = new TestResult
+                {
+                    TestNameAndResultEntry = testTemplate.TestResult.TestNameAndResultEntry
+                        .Select(entry => new TestNameAndResultEntry { Key = entry.Key, Value = "" }).ToList()
+                }
             };
 
-            await unitOfWork.GetWriteRepository<Test>().AddAsync(test);
+            await unitOfWork.GetWriteRepository<Test>().AddAsync(patientTest);
             await unitOfWork.SaveAsync();
 
-            return new CreateTestCommandResponse(test.Id, test.TestName, test.TestPrice, 
-                test.RefDoctor, test.IsReady);
+            return new CreateTestCommandResponse(patientTest.Id, "Patient test created successfully.");
+
         }
     }
 }
