@@ -8,6 +8,7 @@ public class Doctor : EntityBase
     public Guid UserId { get; set; }
     public User User { get; set; }
 
+    public string Fullname { get; set; }
     public string? About { get; set; }
     public List<WorkingTime> WorkingTimes { get; set; }
 

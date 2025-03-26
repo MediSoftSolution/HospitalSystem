@@ -41,7 +41,6 @@ public class MapProfile : Profile
 
             CreateMap<Doctor, GetAllDoctorsQueryResponse>()
             .ForMember(dest => dest.DoctorId, opt => opt.MapFrom(src => src.Id))
-            .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.User.Fullname))
             .ForMember(dest => dest.WorkingTimes, opt => opt.MapFrom(src =>
                 src.WorkingTimes != null
                     ? src.WorkingTimes

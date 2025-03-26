@@ -18,6 +18,7 @@ namespace HospitalSystem.Application.Features.Doctors.Commands.CreateDoctor
         public async Task<Unit> Handle(CreateDoctorCommandRequest request, CancellationToken cancellationToken)
         {
             Doctor doctor = _mapper.Map<Doctor>(request);
+            doctor.Fullname = doctor.User.Fullname;
 
             await unitOfWork.GetWriteRepository<Doctor>().AddAsync(doctor);
             await unitOfWork.SaveAsync();

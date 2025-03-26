@@ -1,8 +1,12 @@
 ﻿using HospitalSystem.Application.Features.Appointment.Commands.CreateAppointment;
+using HospitalSystem.Application.Features.Appointment.Commands.DeleteAppointment;
+using HospitalSystem.Application.Features.Appointment.Commands.UpdateAppointment;
+using HospitalSystem.Application.Features.Appointment.Queries.GetAppointmentById;
+using HospitalSystem.Application.Features.Appointment.Queries.GetAppointmentsByPatient;
 using HospitalSystem.Application.Features.Doctors.Queries.GetAvailableTimes;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Net;
 
 namespace HospitalSystem.API.Controllers
 {
@@ -14,72 +18,104 @@ namespace HospitalSystem.API.Controllers
 
         public AppointmentController(IMediator mediator)
         {
-            _mediator = mediator;
+            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        [HttpGet("available-times")]
-        public async Task<IActionResult> GetAvailableTimes([FromQuery] int doctorId, [FromQuery] DateTime date)
+        [HttpGet("availabletimes")]
+        [ProducesResponseType(typeof(List<DateTime>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetAvailableTimes([FromQuery] int? doctorId, [FromQuery] DateTime? date)
         {
-            var availableTimes = await _mediator.Send(new GetAvailableTimesQueryRequest(doctorId, date));
+            if (!doctorId.HasValue || !date.HasValue)
+                return BadRequest("DoctorId and date must be provided.");
 
-            if (availableTimes == null || availableTimes.Count == 0)
-            {
+            var availableTimes = await _mediator.Send(new GetAvailableTimesQueryRequest(doctorId.Value, date.Value));
+
+            if (availableTimes is null || availableTimes.Count == 0)
                 return NotFound("No available times for the selected date.");
-            }
 
             return Ok(availableTimes);
         }
 
-        //[HttpPost("create")]
-        //public async Task<IActionResult> CreateAppointment([FromBody] CreateAppointmentCommandRequest request)
-        //{
-        //    var result = await _mediator.Send(request);
+        [HttpPost("createappointment")]
+        [ProducesResponseType(typeof(CreateAppointmentCommandResponse), (int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> CreateAppointment([FromBody] CreateAppointmentCommandRequest request)
+        {
+            if (request is null)
+                return BadRequest("Invalid appointment request.");
 
-        //    if (!result.Success)
-        //    {
-        //        return BadRequest(result.Message);
-        //    }
+            var result = await _mediator.Send(request);
 
-        //    return CreatedAtAction(nameof(GetAppointmentById), new { id = result.AppointmentId }, result);
-        //}
+            if (!result.Success)
+                return BadRequest(result.Message);
 
-        //[HttpGet("{id}")]
-        //public async Task<IActionResult> GetAppointmentById(Guid id)
-        //{
-        //    var appointment = await _mediator.Send(new GetAppointmentByIdQueryRequest { Id = id });
+            return CreatedAtAction(nameof(GetAppointmentById), new { id = result.AppointmentId }, result);
+        }
 
-        //    if (appointment == null)
-        //    {
-        //        return NotFound("Appointment not found.");
-        //    }
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(GetAppointmentByIdQueryResponse), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetAppointmentById(int id)
+        {
+            var appointment = await _mediator.Send(new GetAppointmentByIdQueryRequest(id));
 
-        //    return Ok(appointment);
-        //}
+            if (appointment is null)
+                return NotFound("Appointment not found.");
 
-        //[HttpGet("patient/{patientId}")]
-        //public async Task<IActionResult> GetAppointmentsByPatient(Guid patientId)
-        //{
-        //    var appointments = await _mediator.Send(new GetAppointmentsByPatientQueryRequest { PatientId = patientId });
+            return Ok(appointment);
+        }
 
-        //    if (appointments == null || appointments.Count == 0)
-        //    {
-        //        return NotFound("No appointments found for this patient.");
-        //    }
+        [HttpGet("patient/{patientId}")]
+        [ProducesResponseType(typeof(List<GetAppointmentsByPatientQueryResponse>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetAppointmentsByPatient(Guid patientId)
+        {
+            var appointments = await _mediator.Send(new GetAppointmentsByPatientQueryRequest(patientId));
 
-        //    return Ok(appointments);
-        //}
+            if (appointments is null || appointments.Count == 0)
+                return NotFound("No appointments found for this patient.");
 
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> CancelAppointment(Guid id)
-        //{
-        //    var result = await _mediator.Send(new CancelAppointmentCommand { AppointmentId = id });
+            return Ok(appointments);
+        }
 
-        //    if (!result.Success)
-        //    {
-        //        return BadRequest(result.Message);
-        //    }
+        [HttpDelete("{id}")]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> DeleteAppointment(int id)
+        {
+            try
+            {
+                await _mediator.Send(new DeleteAppointmentCommandRequest(id));
+                return NoContent();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
-        //    return NoContent();
-        //}
+        [HttpPut("update")]
+        [ProducesResponseType(typeof(UpdateAppointmentCommandResponse), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> UpdateAppointment([FromBody] UpdateAppointmentCommandRequest request)
+        {
+            if (request is null)
+                return BadRequest("Invalid update request.");
+
+            var result = await _mediator.Send(request);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            return Ok(result);
+        }
     }
 }

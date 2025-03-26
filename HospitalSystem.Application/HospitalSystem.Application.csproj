@@ -11,15 +11,19 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\Appointment\Commands\DeleteAppointment\" />
-      <Folder Include="Features\Appointment\Commands\UpdateAppointment\" />
-      <Folder Include="Features\Appointment\Exceptions\" />
-      <Folder Include="Features\Appointment\Queries\GetAllAppointments\" />
-      <Folder Include="Features\Appointment\Rules\" />
+      <Folder Include="Features\Appointments\Exceptions\" />
+      <Folder Include="Features\Appointments\Rules\" />
       <Folder Include="Features\Doctors\Exceptions\" />
       <Folder Include="Features\Email\Exceptions\" />
       <Folder Include="Features\Offices\Exceptions\" />
       <Folder Include="Features\Specialties\Exceptions\" />
+      <Folder Include="Features\Tests\Commands\DeleteTest\" />
+      <Folder Include="Features\Tests\Commands\UpdateTest\" />
+      <Folder Include="Features\Tests\Exceptions\" />
+      <Folder Include="Features\Tests\Queries\GetTestsByPatient\" />
+      <Folder Include="Features\Tests\Queries\GetTestById\" />
+      <Folder Include="Features\Tests\Queries\GetAllTests\" />
+      <Folder Include="Features\Tests\Rules\" />
     </ItemGroup>
 
     <ItemGroup>

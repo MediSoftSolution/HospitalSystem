@@ -15,11 +15,26 @@ namespace HospitalSystem.Application.Features.Specialities.Commands.UpdateSpecia
 
         public async Task<Unit> Handle(UpdateSpecialityCommandRequest request, CancellationToken cancellationToken)
         {
-            var product = await unitOfWork.GetReadRepository<Specialty>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
+            var speciality = await unitOfWork.GetReadRepository<Specialty>()
+                .GetAsync(x => x.Id == request.Id && !x.IsDeleted);
 
-            var map = mapper.Map<Specialty>(request);
+            if (speciality == null)
+            {
+                throw new KeyNotFoundException("Speciality not found.");
+            }
 
-            await unitOfWork.GetWriteRepository<Specialty>().UpdateAsync(map);
+            speciality.Name = request.Name ?? speciality.Name;
+            speciality.PhotoId = request.PhotoId > 0 ? request.PhotoId : speciality.PhotoId;
+
+            if (request.DoctorIds != null && request.DoctorIds.Any())
+            {
+                speciality.Doctors.Clear();
+                var doctors = await unitOfWork.GetReadRepository<Doctor>()
+                    .GetAllAsync(d => request.DoctorIds.Contains(d.Id));
+                speciality.Doctors.AddRange(doctors);
+            }
+
+            await unitOfWork.GetWriteRepository<Specialty>().UpdateAsync(speciality);
             await unitOfWork.SaveAsync();
 
             return Unit.Value;

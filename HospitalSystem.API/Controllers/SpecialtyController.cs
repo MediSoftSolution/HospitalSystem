@@ -4,6 +4,7 @@ using HospitalSystem.Application.Features.Specialties.Commands.DeleteSpeciality;
 using HospitalSystem.Application.Features.Specialties.Queries.GetAllSpecialities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace HospitalSystem.API.Controllers
 {
@@ -15,10 +16,11 @@ namespace HospitalSystem.API.Controllers
 
         public SpecialtyController(IMediator mediator)
         {
-            _mediator = mediator;
+            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(List<GetAllSpecialitiesQueryResponse>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetAllSpecialities()
         {
             var response = await _mediator.Send(new GetAllSpecialitiesQueryRequest());
@@ -26,24 +28,39 @@ namespace HospitalSystem.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateSpeciality(CreateSpecialityCommandRequest request)
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> CreateSpeciality([FromBody] CreateSpecialityCommandRequest request)
         {
-            await _mediator.Send(request);
-            return Ok();
+            if (request is null)
+                return BadRequest("Invalid speciality data.");
+
+            var result = await _mediator.Send(request);
+            return CreatedAtAction(nameof(GetAllSpecialities), new { id = result.Id }, result);
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateSpeciality(UpdateSpecialityCommandRequest request)
+        [HttpPut("{id}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> UpdateSpeciality(int id, [FromBody] UpdateSpecialityCommandRequest request)
         {
-            await _mediator.Send(request);
-            return Ok();
+            if (request is null || request.Id != id)
+                return BadRequest("Invalid update request.");
+
+            var result = await _mediator.Send(request);
+
+            return Ok(result);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteSpeciality(DeleteSpecialityCommandRequest request)
+        [HttpDelete("{id}")]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> DeleteSpeciality(int id)
         {
-            await _mediator.Send(request);
-            return Ok();
+            var result = await _mediator.Send(new DeleteSpecialityCommandRequest(id));
+
+            return NoContent();
         }
     }
 }

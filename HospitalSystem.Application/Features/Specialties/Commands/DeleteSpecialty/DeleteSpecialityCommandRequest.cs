@@ -7,8 +7,5 @@ using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Features.Specialties.Commands.DeleteSpeciality
 {
-    public class DeleteSpecialityCommandRequest : IRequest<Unit>
-    {
-        public int Id { get; set; }
-    }
+    public record DeleteSpecialityCommandRequest(int Id) : IRequest<Unit>;
 }

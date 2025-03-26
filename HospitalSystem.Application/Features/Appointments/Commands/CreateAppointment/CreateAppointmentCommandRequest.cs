@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Features.Appointment.Commands.CreateAppointment
 {
-    public sealed class CreateAppointmentCommandRequest : IRequest<Unit>
-    {
+    public record CreateAppointmentCommandRequest(Guid PatientId, int DoctorId, string Message,
+        DateTime AppointmentDate): IRequest<CreateAppointmentCommandResponse>;
 
-    }
 }

@@ -12,7 +12,12 @@ namespace HospitalSystem.Application.Features.Specialties.Commands.CreateSpecial
     {
         public CreateSpecialityCommandValidator()
         {
-           
+            RuleFor(x => x.Name)
+            .NotEmpty().WithMessage("Speciality name is required.")
+            .MaximumLength(100).WithMessage("Speciality name cannot exceed 100 characters.");
+
+            RuleFor(x => x.PhotoId)
+                .GreaterThan(0).WithMessage("Photo ID must be greater than zero.");
         }
     }
 }

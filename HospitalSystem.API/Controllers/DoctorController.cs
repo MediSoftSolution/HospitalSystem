@@ -21,10 +21,6 @@ namespace HospitalSystem.API.Controllers
             _mediator = mediator;
         }
 
-        /// <summary>
-        /// Get all doctors
-        /// </summary>
-        /// <returns>List of doctors</returns>
         [HttpGet]
         [ProducesResponseType(typeof(List<GetAllDoctorsQueryResponse>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -40,11 +36,6 @@ namespace HospitalSystem.API.Controllers
             return Ok(doctors);
         }
 
-        /// <summary>
-        /// Create a new doctor
-        /// </summary>
-        /// <param name="request">Doctor creation request</param>
-        /// <returns>Status of the operation</returns>
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
@@ -60,12 +51,6 @@ namespace HospitalSystem.API.Controllers
             return BadRequest("Failed to create doctor.");
         }
 
-        /// <summary>
-        /// Update an existing doctor
-        /// </summary>
-        /// <param name="id">Doctor ID</param>
-        /// <param name="request">Doctor update request</param>
-        /// <returns>Status of the operation</returns>
         [HttpPut("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -87,11 +72,6 @@ namespace HospitalSystem.API.Controllers
             return NotFound("Doctor not found.");
         }
 
-        /// <summary>
-        /// Delete a doctor by ID
-        /// </summary>
-        /// <param name="id">Doctor ID</param>
-        /// <returns>Status of the operation</returns>
         [HttpDelete("{id}")]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -107,12 +87,6 @@ namespace HospitalSystem.API.Controllers
             return NotFound("Doctor not found.");
         }
 
-        /// <summary>
-        /// Get alternative doctors available for a given specialty and date
-        /// </summary>
-        /// <param name="specialityName">Specialty name</param>
-        /// <param name="dateTime">Desired appointment date</param>
-        /// <returns>List of available doctors</returns>
         [HttpGet("alternative")]
         [ProducesResponseType(typeof(ICollection<GetAlternativeDoctorsQueryResponse>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -134,12 +108,6 @@ namespace HospitalSystem.API.Controllers
             return Ok(alternativeDoctors);
         }
 
-        /// <summary>
-        /// Get available times for a specific doctor on a given date
-        /// </summary>
-        /// <param name="doctorId">The doctor's ID</param>
-        /// <param name="date">The desired date for appointment</param>
-        /// <returns>List of available times for the doctor on the given date</returns>
         [HttpGet("{doctorId}/available-times")]
         [ProducesResponseType(typeof(ICollection<TimeSpan>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
