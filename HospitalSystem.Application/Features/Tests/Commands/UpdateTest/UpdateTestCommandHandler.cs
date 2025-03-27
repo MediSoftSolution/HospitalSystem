@@ -22,23 +22,35 @@ namespace HospitalSystem.Application.Features.Tests.Commands.UpdateTest
         {
             var test = await unitOfWork.GetReadRepository<Test>().GetAsync(t => t.Id == request.Id);
 
-            if (test == null)
-                return new UpdateTestCommandResponse(false, "Test not found.");
+            if (test == null) return new UpdateTestCommandResponse(false, "Test not found.");
 
             test.RefDoctor = request.RefDoctor;
             test.IsReady = request.IsReady;
             test.UserName = request.UserName;
+            test.TestConclusion = request.TestConclusion;
 
-            if (request.TestResult != null)
+            if (request.TestNameAndResultEntries != null && request.TestNameAndResultEntries.Any())
             {
-                test.TestResult ??= new TestResult();
+                foreach (var entryRequest in request.TestNameAndResultEntries)
+                {
+                    var existingEntry = test.TestNameAndResultEntry.FirstOrDefault(e => e.Key == entryRequest.Key);
 
-                test.TestResult.TestNameAndResultEntry = request.TestResult.TestNameAndResultEntries?
-                    .Select(entry => new TestNameAndResultEntry { Value = entry.Value })
-                    .ToList();
+                    if (existingEntry != null)
+                    {
+                        existingEntry.Value = entryRequest.Value;
+                    }
+                }
+            }
 
-                test.TestResult.TestImageUrl = request.TestResult.TestImageUrls ?? new List<string>();
-                test.TestResult.TestConclusion = request.TestResult.TestConclusion;
+            if (request.TestImageUrls != null)
+            {
+                test.TestImages ??= new List<TestImage>();
+                foreach (var item in request.TestImageUrls)
+                {
+                    TestImage testImage = new() { ImageUrl = item, TestId = test.Id};
+                    test.TestImages.Add(testImage);
+                }
+                
             }
 
             await unitOfWork.GetWriteRepository<Test>().UpdateAsync(test);

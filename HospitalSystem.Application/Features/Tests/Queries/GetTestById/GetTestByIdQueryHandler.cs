@@ -1,6 +1,7 @@
 ﻿using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,8 @@ namespace HospitalSystem.Application.Features.Tests.Queries.GetTestById
 
         public async Task<GetTestByIdQueryResponse?> Handle(GetTestByIdQueryRequest request, CancellationToken cancellationToken)
         {
-            var test = await _unitOfWork.GetReadRepository<Test>().GetAsync(t => t.Id == request.TestId);
+            var test = await _unitOfWork.GetReadRepository<Test>().GetAsync(t => t.Id == request.TestId,
+                include: q => q.Include(t => t.TestNameAndResultEntry).Include(t => t.TestImages));
 
             if (test == null) return null;
 
@@ -32,19 +34,14 @@ namespace HospitalSystem.Application.Features.Tests.Queries.GetTestById
                 RefDoctor = test.RefDoctor,
                 IsReady = test.IsReady,
                 UserName = test.UserName,
-                TestResult = test.TestResult != null
-                    ? new TestResultResponse
+                TestConclusion = test.TestConclusion,
+                TestNameAndResultEntries = test.TestNameAndResultEntry?.Select(entry =>
+                    new TestNameAndResultEntryResponse
                     {
-                        TestNameAndResultEntries = test.TestResult.TestNameAndResultEntry?.Select(entry =>
-                            new TestNameAndResultEntryResponse
-                            {
-                                Key = entry.Key,
-                                Value = entry.Value
-                            }).ToList() ?? new List<TestNameAndResultEntryResponse>(),
-                        TestImageUrls = test.TestResult.TestImageUrl ?? new List<string>(),
-                        TestConclusion = test.TestResult.TestConclusion
-                    }
-                    : null
+                        Key = entry.Key,
+                        Value = entry.Value
+                    }).ToList() ?? new List<TestNameAndResultEntryResponse>(),
+                TestImageUrls = test.TestImages.Select(entry => entry.ImageUrl).ToList() ?? new List<string>()
             };
         }
 

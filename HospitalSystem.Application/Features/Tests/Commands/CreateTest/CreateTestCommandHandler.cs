@@ -15,27 +15,27 @@ namespace HospitalSystem.Application.Features.Tests.Commands.CreateTest
 
         public async Task<CreateTestCommandResponse> Handle(CreateTestCommandRequest request, CancellationToken cancellationToken)
         {
-            var testTemplate = await unitOfWork.GetReadRepository<Test>().GetAsync(x => x.TestName == request.TestName);
+            var testTemplate = await unitOfWork.GetReadRepository<TestTemplate>().GetAsync(x => x.TestName == request.TestName);
             if (testTemplate == null)
-                return new CreateTestCommandResponse(0, "Test template not found.");
+                return new CreateTestCommandResponse(false, "Test template not found.");
 
             var patientTest = new Test
             {
-                UserName = request.UserName,
-                RefDoctor = request.RefDoctor,
                 TestName = request.TestName,
+                UserName = request.UserName,
+                TestPrice = testTemplate.TestPrice,
+                RefDoctor = request.RefDoctor,
                 IsReady = false,
-                TestResult = new TestResult
-                {
-                    TestNameAndResultEntry = testTemplate.TestResult.TestNameAndResultEntry
-                        .Select(entry => new TestNameAndResultEntry { Key = entry.Key, Value = "" }).ToList()
-                }
+                TestNameAndResultEntry = testTemplate.TestKeys
+                    .Select(key => new TestNameAndResultEntry { Key = key.Key, Value = "" })
+                    .ToList()
             };
+
 
             await unitOfWork.GetWriteRepository<Test>().AddAsync(patientTest);
             await unitOfWork.SaveAsync();
 
-            return new CreateTestCommandResponse(patientTest.Id, "Patient test created successfully.");
+            return new CreateTestCommandResponse(true, "Patient test created successfully.");
 
         }
     }

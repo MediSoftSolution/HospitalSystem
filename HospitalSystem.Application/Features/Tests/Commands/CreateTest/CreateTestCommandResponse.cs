@@ -1,4 +1,4 @@
 ﻿namespace HospitalSystem.Application.Features.Tests.Commands.CreateTest
 {
-    public record CreateTestCommandResponse(int TestId, string Message);
+    public record CreateTestCommandResponse(bool Success, string Message);
 }

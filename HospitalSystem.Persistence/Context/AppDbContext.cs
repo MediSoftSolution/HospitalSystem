@@ -17,6 +17,9 @@ public class AppDbContext : IdentityDbContext<User, Role, Guid>
     public DbSet<WorkingTime> WorkingTimes { get; set; }
     public DbSet<Photo> Photos { get; set; }
     public DbSet<Appointment> Appointments { get; set; }
+    public DbSet<Test> Tests { get; set; }
+    public DbSet<TestNameAndResultEntry> TestNameAndResultEntries { get; set; }
+    public DbSet<TestTemplate> TestTemplates { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

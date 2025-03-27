@@ -13,9 +13,6 @@ namespace HospitalSystem.Application.Features.Tests.Commands.UpdateTest
             RuleFor(x => x.UserName)
                 .NotEmpty().WithMessage("UserName is required.");
 
-            RuleForEach(x => x.TestResult.TestNameAndResultEntries)
-                .SetValidator(new TestNameAndResultEntryValidator())
-                .When(x => x.TestResult?.TestNameAndResultEntries != null);
         }
     }
 

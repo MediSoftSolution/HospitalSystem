@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Features.Tests.Commands.CreateTestTemplate
 {
-    public record CreateTestTemplateCommandResponse(int TestTemplateId, string Message);
+    public record CreateTestTemplateCommandResponse(bool Success, string Message);
 }

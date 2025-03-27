@@ -12,16 +12,13 @@ namespace HospitalSystem.Application.Features.Tests.Commands.UpdateTest
         string? RefDoctor,
         bool IsReady,
         string UserName,
-        TestResultRequest? TestResult
-    ) : IRequest<UpdateTestCommandResponse>;
-
-    public record TestResultRequest(
         List<TestNameAndResultEntryRequest>? TestNameAndResultEntries,
         List<string>? TestImageUrls,
         string? TestConclusion
-    );
+    ) : IRequest<UpdateTestCommandResponse>;
 
     public record TestNameAndResultEntryRequest(
+        string Key,
         string Value
     );
 

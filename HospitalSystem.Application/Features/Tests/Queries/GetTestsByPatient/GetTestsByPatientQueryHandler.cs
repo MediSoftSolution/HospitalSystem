@@ -1,11 +1,7 @@
-﻿using HospitalSystem.Application.Interfaces.UnitOfWorks;
+﻿using HospitalSystem.Application.Features.Tests.Queries.GetTestById;
+using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Features.Tests.Queries.GetTestsByPatient
 {
@@ -28,17 +24,9 @@ namespace HospitalSystem.Application.Features.Tests.Queries.GetTestsByPatient
             return tests.Select(test => new GetTestsByPatientQueryResponse(
                 test.Id,
                 test.TestName,
-                test.TestPrice,
                 test.RefDoctor,
                 test.IsReady,
-                test.UserName,
-                test.TestResult == null ? null : new TestResultResponse(
-                    test.TestResult.TestNameAndResultEntry?
-                        .Select(entry => new TestNameAndResultEntryResponse(entry.Key, entry.Value))
-                        .ToList(),
-                    test.TestResult.TestImageUrl,
-                    test.TestResult.TestConclusion
-                )
+                test.UserName   
             )).ToList();
         }
     }

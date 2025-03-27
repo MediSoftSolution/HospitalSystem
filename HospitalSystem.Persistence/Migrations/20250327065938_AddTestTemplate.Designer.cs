@@ -4,6 +4,7 @@ using HospitalSystem.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HospitalSystem.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250327065938_AddTestTemplate")]
+    partial class AddTestTemplate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -221,159 +224,6 @@ namespace HospitalSystem.Persistence.Migrations
                     b.HasIndex("PhotoId");
 
                     b.ToTable("Specialties");
-                });
-
-            modelBuilder.Entity("HospitalSystem.Domain.Entities.Test", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsReady")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("RefDoctor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TestConclusion")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TestName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("TestPrice")
-                        .HasColumnType("float");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tests");
-                });
-
-            modelBuilder.Entity("HospitalSystem.Domain.Entities.TestImage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("TestId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TestId");
-
-                    b.ToTable("TestImage");
-                });
-
-            modelBuilder.Entity("HospitalSystem.Domain.Entities.TestNameAndResultEntry", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Key")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TestId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Value")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TestId");
-
-                    b.ToTable("TestNameAndResultEntries");
-                });
-
-            modelBuilder.Entity("HospitalSystem.Domain.Entities.TestTemplate", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("TestName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("TestPrice")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TestTemplates");
-                });
-
-            modelBuilder.Entity("HospitalSystem.Domain.Entities.TestTemplateKey", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Key")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TestTemplateId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TestTemplateId");
-
-                    b.ToTable("TestTemplateKey");
                 });
 
             modelBuilder.Entity("HospitalSystem.Domain.Entities.User", b =>
@@ -657,39 +507,6 @@ namespace HospitalSystem.Persistence.Migrations
                     b.Navigation("Photo");
                 });
 
-            modelBuilder.Entity("HospitalSystem.Domain.Entities.TestImage", b =>
-                {
-                    b.HasOne("HospitalSystem.Domain.Entities.Test", "Test")
-                        .WithMany("TestImages")
-                        .HasForeignKey("TestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Test");
-                });
-
-            modelBuilder.Entity("HospitalSystem.Domain.Entities.TestNameAndResultEntry", b =>
-                {
-                    b.HasOne("HospitalSystem.Domain.Entities.Test", "Test")
-                        .WithMany("TestNameAndResultEntry")
-                        .HasForeignKey("TestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Test");
-                });
-
-            modelBuilder.Entity("HospitalSystem.Domain.Entities.TestTemplateKey", b =>
-                {
-                    b.HasOne("HospitalSystem.Domain.Entities.TestTemplate", "TestTemplate")
-                        .WithMany("TestKeys")
-                        .HasForeignKey("TestTemplateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TestTemplate");
-                });
-
             modelBuilder.Entity("HospitalSystem.Domain.Entities.WorkingTime", b =>
                 {
                     b.HasOne("HospitalSystem.Domain.Entities.Doctor", null)
@@ -769,18 +586,6 @@ namespace HospitalSystem.Persistence.Migrations
             modelBuilder.Entity("HospitalSystem.Domain.Entities.Specialty", b =>
                 {
                     b.Navigation("Doctors");
-                });
-
-            modelBuilder.Entity("HospitalSystem.Domain.Entities.Test", b =>
-                {
-                    b.Navigation("TestImages");
-
-                    b.Navigation("TestNameAndResultEntry");
-                });
-
-            modelBuilder.Entity("HospitalSystem.Domain.Entities.TestTemplate", b =>
-                {
-                    b.Navigation("TestKeys");
                 });
 #pragma warning restore 612, 618
         }
