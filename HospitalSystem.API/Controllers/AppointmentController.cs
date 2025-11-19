@@ -38,7 +38,7 @@ namespace HospitalSystem.API.Controllers
             return Ok(availableTimes);
         }
 
-        [HttpPost("createappointment")]
+        [HttpPost("api/appointments")]
         [ProducesResponseType(typeof(CreateAppointmentCommandResponse), (int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> CreateAppointment([FromBody] CreateAppointmentCommandRequest request)
@@ -54,7 +54,7 @@ namespace HospitalSystem.API.Controllers
             return CreatedAtAction(nameof(GetAppointmentById), new { id = result.AppointmentId }, result);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("api/appointments/{id}")]
         [ProducesResponseType(typeof(GetAppointmentByIdQueryResponse), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> GetAppointmentById(int id)
@@ -80,28 +80,21 @@ namespace HospitalSystem.API.Controllers
             return Ok(appointments);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("api/{id}")]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> DeleteAppointment(int id)
         {
-            try
-            {
-                await _mediator.Send(new DeleteAppointmentCommandRequest(id));
-                return NoContent();
-            }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
-            catch (InvalidOperationException ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var result  = await _mediator.Send(new DeleteAppointmentCommandRequest(id));
+
+            if (!result)
+                return NotFound();
+
+            return NoContent();
         }
 
-        [HttpPut("update")]
+        [HttpPut("api/{id}")]
         [ProducesResponseType(typeof(UpdateAppointmentCommandResponse), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]

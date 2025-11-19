@@ -20,11 +20,10 @@ namespace HospitalSystem.Application.Features.Doctors.Queries.GetAllDoctors
         {
             var doctors = await unitOfWork
                            .GetReadRepository<Doctor>()
-                           .GetAllAsync(include: x => x.Include(d => d.User).Include(d => d.WorkingTimes));
+                           .GetAllAsync(include: x => x.Include(d => d.User).Include(d => d.WorkingTimes), 
+                           enableTracking: false);
 
             var doctorDtos = mapper.Map<List<GetAllDoctorsQueryResponse>>(doctors);
-
-            
 
             return doctorDtos;
         }

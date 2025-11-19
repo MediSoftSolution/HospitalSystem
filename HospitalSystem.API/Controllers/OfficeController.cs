@@ -1,4 +1,9 @@
-﻿using HospitalSystem.Application.Features.Offices.Queries.GetAllOffices;
+﻿using HospitalSystem.Application.Features.Doctors.Commands.CreateDoctor;
+using HospitalSystem.Application.Features.Doctors.Commands.DeleteDoctor;
+using HospitalSystem.Application.Features.Offices.Commands.CreateOffice;
+using HospitalSystem.Application.Features.Offices.Commands.DeleteOffice;
+using HospitalSystem.Application.Features.Offices.Commands.UpdateDoctor;
+using HospitalSystem.Application.Features.Offices.Queries.GetAllOffices;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -25,46 +30,47 @@ namespace HospitalSystem.API.Controllers
             return Ok(response);
         }
 
-        //[HttpPost]
-        //[ProducesResponseType(typeof(CreateOfficeCommandResponse), (int)HttpStatusCode.Created)]
-        //[ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        //public async Task<IActionResult> CreateOffice([FromBody] CreateOfficeCommandRequest request)
-        //{
-        //    if (request is null)
-        //        return BadRequest("Invalid office data.");
+        [HttpPost]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> CreateOffice([FromBody] CreateOfficeCommandRequest request)
+        {
+            if (request is null)
+                return BadRequest("Invalid office data.");
 
-        //    var result = await _mediator.Send(request);
-        //    return CreatedAtAction(nameof(GetAllOffices), new { id = result.Id }, result);
-        //}
+            var result = await _mediator.Send(request);
+            return Ok(result);
+        }
 
-        //[HttpPut("{id}")]
-        //[ProducesResponseType(typeof(UpdateOfficeCommandResponse), (int)HttpStatusCode.OK)]
-        //[ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        //[ProducesResponseType((int)HttpStatusCode.NotFound)]
-        //public async Task<IActionResult> UpdateOffice(Guid id, [FromBody] UpdateOfficeCommandRequest request)
-        //{
-        //    if (request is null || request.Id != id)
-        //        return BadRequest("Invalid update request.");
 
-        //    var result = await _mediator.Send(request);
+        [HttpPut("{id}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> UpdateOffice(Guid id, [FromBody] UpdateOfficeCommandRequest request)
+        {
+            if (request is null)
+                return BadRequest("Invalid update request.");
 
-        //    if (!result.Success)
-        //        return NotFound(result.Message);
+            var result = await _mediator.Send(request);
 
-        //    return Ok(result);
-        //}
+            if (!result)
+                return NotFound(result);
 
-        //[HttpDelete("{id}")]
-        //[ProducesResponseType((int)HttpStatusCode.NoContent)]
-        //[ProducesResponseType((int)HttpStatusCode.NotFound)]
-        //public async Task<IActionResult> DeleteOffice(Guid id)
-        //{
-        //    var result = await _mediator.Send(new DeleteOfficeCommandRequest(id));
+            return Ok(result);
+        }
 
-        //    if (!result.Success)
-        //        return NotFound(result.Message);
+        [HttpDelete("{id}")]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> DeleteOffice(int id)
+        {
+            var result = await _mediator.Send(new DeleteOfficeCommandRequest { Id = id });
 
-        //    return NoContent();
-        //}
+            if (!result)
+                return NotFound(result);
+
+            return NoContent();
+        }
     }
 }

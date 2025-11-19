@@ -4,6 +4,7 @@ using HospitalSystem.Application.Features.Doctors.Commands.UpdateDoctor;
 using HospitalSystem.Application.Features.Doctors.Queries.GetAllDoctors;
 using HospitalSystem.Application.Features.Doctors.Queries.GetAlternativeDoctors;
 using HospitalSystem.Application.Features.Doctors.Queries.GetAvailableTimes;
+using HospitalSystem.Application.Features.Doctors.Queries.GetDoctorById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -23,17 +24,24 @@ namespace HospitalSystem.API.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(List<GetAllDoctorsQueryResponse>), (int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> GetAllDoctors()
         {
             var doctors = await _mediator.Send(new GetAllDoctorsQueryRequest());
 
-            if (doctors == null || doctors.Count == 0)
-            {
-                return NotFound("No doctors found.");
-            }
-
             return Ok(doctors);
+        }
+
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(GetDoctorByIdQueryResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var doctor = await _mediator.Send(new GetDoctorByIdQueryRequest());
+
+            if (doctor is null)
+                return NotFound(new { message = "Doctor not found", errorCode = "DOCTOR_NOT_FOUND" });
+
+            return Ok(doctor);
         }
 
         [HttpPost]
@@ -90,7 +98,8 @@ namespace HospitalSystem.API.Controllers
         [HttpGet("alternative")]
         [ProducesResponseType(typeof(ICollection<GetAlternativeDoctorsQueryResponse>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> GetAlternativeDoctors([FromQuery] string specialityName, [FromQuery] DateTime dateTime)
+        public async Task<IActionResult> GetAlternativeDoctors([FromQuery] string specialityName, 
+            [FromQuery] DateTime dateTime)
         {
             var request = new GetAlternativeDoctorsQueryRequest
             {

@@ -2,6 +2,7 @@
 using HospitalSystem.Application.Features.Specialties.Commands.CreateSpeciality;
 using HospitalSystem.Application.Features.Specialties.Commands.DeleteSpeciality;
 using HospitalSystem.Application.Features.Specialties.Queries.GetAllSpecialities;
+using HospitalSystem.Application.Features.Specialties.Queries.GetSpecialityById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -27,6 +28,14 @@ namespace HospitalSystem.API.Controllers
             return Ok(response);
         }
 
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(List<GetAllSpecialitiesQueryResponse>), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> GetSpecialityById()
+        {
+            var response = await _mediator.Send(new GetSpecialityByIdQueryRequest());
+            return Ok(response);
+        }
+
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
@@ -36,13 +45,12 @@ namespace HospitalSystem.API.Controllers
                 return BadRequest("Invalid speciality data.");
 
             var result = await _mediator.Send(request);
-            return CreatedAtAction(nameof(GetAllSpecialities), new { id = result.Id }, result);
+            return Ok(result);
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> UpdateSpeciality(int id, [FromBody] UpdateSpecialityCommandRequest request)
         {
             if (request is null || request.Id != id)
@@ -60,7 +68,11 @@ namespace HospitalSystem.API.Controllers
         {
             var result = await _mediator.Send(new DeleteSpecialityCommandRequest(id));
 
+            if (!result)
+                return NotFound();
+
             return NoContent();
+
         }
     }
 }

@@ -10,7 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using StackExchange.Redis;
-using System.Net.Mail;
 using System.Text;
 
 namespace HospitalSystem.Infrastructure

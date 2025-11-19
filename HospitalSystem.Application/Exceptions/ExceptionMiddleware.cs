@@ -4,8 +4,6 @@ using HospitalSystem.Application.Features.Auth.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using SendGrid.Helpers.Errors.Model;
-using Serilog.Core;
-using System.Text.Json;
 
 
 namespace HospitalSystem.Application.Exceptions
@@ -65,9 +63,7 @@ namespace HospitalSystem.Application.Exceptions
             NotFoundException => StatusCodes.Status404NotFound,
             UnauthorizedAccessException => StatusCodes.Status401Unauthorized,
             ValidationException => StatusCodes.Status422UnprocessableEntity,
-
             EmailOrPasswordShouldNotBeInvalidException => StatusCodes.Status401Unauthorized,
-
             BaseException => StatusCodes.Status400BadRequest,
 
             _ => StatusCodes.Status500InternalServerError

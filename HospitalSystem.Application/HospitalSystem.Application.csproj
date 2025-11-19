@@ -13,7 +13,6 @@
     <ItemGroup>
       <Folder Include="Features\Appointments\Exceptions\" />
       <Folder Include="Features\Appointments\Rules\" />
-      <Folder Include="Features\Doctors\Exceptions\" />
       <Folder Include="Features\Email\Exceptions\" />
       <Folder Include="Features\Offices\Exceptions\" />
       <Folder Include="Features\Specialties\Exceptions\" />

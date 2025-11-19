@@ -1,8 +1,8 @@
 ﻿using HospitalSystem.Domain.Entities;
 
-namespace HospitalSystem.Application.Features.Specialties.Queries.GetAllSpecialities
+namespace HospitalSystem.Application.Features.Specialties.Queries.GetSpecialityById
 {
-    public class GetAllSpecialitiesQueryResponse
+    public class GetSpecialityByIdQueryResponse
     {
         public string Name { get; set; } = string.Empty;
         public List<Doctor> Doctors { get; set; }

@@ -1,13 +1,8 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Features.Offices.Commands.DeleteOffice
 {
-    public class DeleteOfficeCommandRequest : IRequest<Unit>
+    public class DeleteOfficeCommandRequest : IRequest<bool>
     {
         public int Id { get; set; }
     }

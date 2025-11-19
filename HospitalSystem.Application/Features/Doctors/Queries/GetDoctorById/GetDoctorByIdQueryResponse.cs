@@ -1,9 +1,8 @@
-﻿
-using HospitalSystem.Application.DTOs;
+﻿using HospitalSystem.Application.DTOs;
 
-namespace HospitalSystem.Application.Features.Doctors.Queries.GetAllDoctors
+namespace HospitalSystem.Application.Features.Doctors.Queries.GetDoctorById
 {
-    public class GetAllDoctorsQueryResponse
+    public class GetDoctorByIdQueryResponse
     {
         public int DoctorId { get; set; }
         public Guid UserId { get; set; }

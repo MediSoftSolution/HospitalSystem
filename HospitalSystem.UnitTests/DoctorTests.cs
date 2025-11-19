@@ -47,7 +47,7 @@ public class DoctorTests
     public void Doctor_Should_Have_At_Least_One_WorkingTime()
     {
         // Arrange
-        var doctor = new Doctor { WorkingTimes = new List<WorkingTime>() };
+        var doctor = new Doctor { WorkingTimes = new Dictionary<DayOfWeek, WorkingTime>() };
 
         // Act
         bool isValid = doctor.WorkingTimes.Count > 0;
