@@ -16,7 +16,6 @@
       <Folder Include="Features\Email\Exceptions\" />
       <Folder Include="Features\Offices\Exceptions\" />
       <Folder Include="Features\Specialties\Exceptions\" />
-      <Folder Include="Features\Tests\Exceptions\" />
       <Folder Include="Features\Tests\Queries\GetAllTests\" />
       <Folder Include="Features\Tests\Rules\" />
     </ItemGroup>

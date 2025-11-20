@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using HospitalSystem.Application.Bases;
+using HospitalSystem.Application.Features.Tests.Constants;
+using HospitalSystem.Application.Features.Tests.Exceptions;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace HospitalSystem.Application.Features.Tests.Commands.CreateTest
 {
@@ -15,29 +18,35 @@ namespace HospitalSystem.Application.Features.Tests.Commands.CreateTest
 
         public async Task<CreateTestCommandResponse> Handle(CreateTestCommandRequest request, CancellationToken cancellationToken)
         {
-            var testTemplate = await unitOfWork.GetReadRepository<TestTemplate>().GetAsync(x => x.TestName == request.TestName);
+            var testTemplate = await unitOfWork.GetReadRepository<TestTemplate>()
+                .GetAsync(x => x.TestName == request.TestName,
+                          include: x => x.Include(d => d.Keys));
+
             if (testTemplate == null)
-                return new CreateTestCommandResponse(false, "Test template not found.");
+                throw new TestTemplateNotFoundException(request.TestName);
 
             var patientTest = new Test
             {
-                TestName = request.TestName,
-                UserName = request.UserName,
-                TestPrice = testTemplate.TestPrice,
+                TestTemplateId = testTemplate.Id,
+                PatientId = request.PatientId,
                 RefDoctor = request.RefDoctor,
                 IsReady = false,
-                TestNameAndResultEntry = testTemplate.TestKeys
-                    .Select(key => new TestNameAndResultEntry { Key = key.Key, Value = "" })
+                Results = testTemplate.Keys
+                    .Select(k => new TestResultEntry
+                    {
+                        Key = k.Key,
+                        Value = ""
+                    })
                     .ToList()
             };
-
 
             await unitOfWork.GetWriteRepository<Test>().AddAsync(patientTest);
             await unitOfWork.SaveAsync();
 
-            return new CreateTestCommandResponse(true, "Patient test created successfully.");
-
+            return new CreateTestCommandResponse(true, TestMessages.TestCreatedSuccessfully);
         }
+
+
     }
 }
 

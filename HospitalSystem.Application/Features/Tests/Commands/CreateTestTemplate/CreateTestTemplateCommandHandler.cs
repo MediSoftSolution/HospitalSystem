@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using HospitalSystem.Application.Bases;
+using HospitalSystem.Application.Features.Tests.Constants;
+using HospitalSystem.Application.Features.Tests.Exceptions;
 using HospitalSystem.Application.Interfaces.UnitOfWorks;
 using HospitalSystem.Domain.Entities;
 using MediatR;
@@ -15,28 +17,36 @@ namespace HospitalSystem.Application.Features.Tests.Commands.CreateTestTemplate
 
         public async Task<CreateTestTemplateCommandResponse> Handle(CreateTestTemplateCommandRequest request, CancellationToken cancellationToken)
         {
-            var template = await unitOfWork.GetReadRepository<TestTemplate>()
-                .GetAsync(tt => tt.TestName == request.TestName);
+            var existing = await unitOfWork.GetReadRepository<TestTemplate>()
+                .GetAsync(x => x.TestName.ToLower().Trim() == request.TestName.ToLower().Trim());
 
-            if (template != null)
-            {
-                throw new Exception("Test template already existed.");
-            }
+            if (existing != null)
+                throw new TestTemplateAlreadyExistsException(request.TestName);
 
-            var testTemplate = new TestTemplate
+            var template = new TestTemplate
             {
                 TestName = request.TestName,
                 TestPrice = request.TestPrice,
-                TestKeys = request.TestNameAndResultEntry?.Select( entry => 
-                new TestTemplateKey { Key = entry.Key }).ToList()
+                Keys = new List<TestTemplateKey>()
             };
 
+            if (request.TestNameAndResultEntry != null)
+            {
+                foreach (var entry in request.TestNameAndResultEntry)
+                {
+                    template.Keys.Add(new TestTemplateKey
+                    {
+                        Key = entry.Key,
+                        TestTemplate = template
+                    });
+                }
+            }
 
-            await unitOfWork.GetWriteRepository<TestTemplate>().AddAsync(testTemplate);
+            await unitOfWork.GetWriteRepository<TestTemplate>().AddAsync(template);
             await unitOfWork.SaveAsync();
 
-            return new CreateTestTemplateCommandResponse(true, "Test template added successfully!");
-
+            return new CreateTestTemplateCommandResponse(true, TestMessages.TemplateCreatedSuccessfully);
         }
+
     }
 }

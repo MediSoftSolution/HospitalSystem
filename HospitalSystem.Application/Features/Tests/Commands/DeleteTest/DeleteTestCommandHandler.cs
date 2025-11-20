@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace HospitalSystem.Application.Features.Tests.Commands.DeleteTest
 {
-    public class DeleteTestCommandHandler : BaseHandler, IRequestHandler<DeleteTestCommandRequest, Unit>
+    public class DeleteTestCommandHandler : BaseHandler, IRequestHandler<DeleteTestCommandRequest, bool>
     {
         public DeleteTestCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
 
-        public async Task<Unit> Handle(DeleteTestCommandRequest request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(DeleteTestCommandRequest request, CancellationToken cancellationToken)
         {
             var test = await unitOfWork.GetReadRepository<Test>().GetAsync(t => t.Id == request.Id);
 
@@ -29,7 +29,7 @@ namespace HospitalSystem.Application.Features.Tests.Commands.DeleteTest
             await unitOfWork.GetWriteRepository<Test>().UpdateAsync(test);
             await unitOfWork.SaveAsync();
 
-            return Unit.Value;
+            return true;
         }
     }
 }

@@ -22,10 +22,10 @@ namespace HospitalSystem.API.Controllers
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        [HttpGet("patient/{patientId}")]
+        [HttpGet("patient/{patientName}")]
         [ProducesResponseType(typeof(List<GetTestsByPatientQueryResponse>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> GetTestsByPatient(string patientName)
+        public async Task<IActionResult> GetTestsByPatientId(string patientName)
         {
             var tests = await _mediator.Send(new GetTestsByPatientQueryRequest(patientName));
 
@@ -58,7 +58,7 @@ namespace HospitalSystem.API.Controllers
 
             var result = await _mediator.Send(request);
 
-            return Ok(HttpStatusCode.Created);
+            return StatusCode((int)HttpStatusCode.Created, result);
         }
 
         [HttpPut("{id}")]
@@ -84,6 +84,9 @@ namespace HospitalSystem.API.Controllers
         public async Task<IActionResult> DeleteTest(int id)
         {
             var result = await _mediator.Send(new DeleteTestCommandRequest(id));
+
+            if (!result)
+                return NotFound(result);
 
             return NoContent();
         }

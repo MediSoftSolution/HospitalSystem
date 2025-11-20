@@ -1,5 +1,4 @@
 ﻿using HospitalSystem.Domain.Entities;
-using System.Collections.Generic;
 using Xunit;
 
 public class DoctorTests
